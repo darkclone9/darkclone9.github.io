@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Overview - Gary's Portfolio</title>
+  <meta name="description" content="Comprehensive overview of Gary's technical and creative skills including Adobe Creative Suite, programming languages, and creative abilities">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="../css/styles.css" as="style">
+  <link rel="preload" href="../js/skill-page.js" as="script">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/skill-pages.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="skill-nav" role="navigation" aria-label="Skills page navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="back-btn" aria-label="Go back to portfolio home">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+        <ol role="list">
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><span class="separator" aria-hidden="true">/</span></li>
+          <li><span class="current" aria-current="page">Skills Overview</span></li>
+        </ol>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="skill-page" id="main-content">
+    <!-- Hero section -->
+    <section class="skill-hero" aria-labelledby="skill-page-title">
+      <div class="container">
+        <div class="skill-header">
+          <div class="skill-icon creative-icon" aria-hidden="true">
+            <i class="fas fa-star"></i>
+          </div>
+          <h1 id="skill-page-title" class="skill-title">Skills Overview</h1>
+          <p class="skill-subtitle">Comprehensive Technical & Creative Expertise</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section class="skill-content" aria-labelledby="skills-grid-title">
+      <div class="container">
+        <h2 id="skills-grid-title" class="visually-hidden">Skills by Category</h2>
+        <div class="skills-overview-grid">
+          <!-- Adobe Creative Suite -->
+          <article class="skill-category-card">
+            <h2><i class="fab fa-adobe" aria-hidden="true"></i> Adobe Creative Suite</h2>
+            <p>Professional design and creative software mastery</p>
+
+            <div class="skill-links">
+              <a href="illustrator.html" class="skill-link adobe">
+                <i class="fab fa-adobe" aria-hidden="true"></i>
+                <div>
+                  <h3>Illustrator</h3>
+                  <span>Vector Graphics & Brand Design</span>
+                  <div class="skill-level" aria-label="Skill level: Advanced, 85 percent">Advanced (85%)</div>
+                </div>
+              </a>
+
+              <a href="photoshop.html" class="skill-link adobe">
+                <i class="fab fa-adobe" aria-hidden="true"></i>
+                <div>
+                  <h3>Photoshop</h3>
+                  <span>Photo Manipulation & Digital Art</span>
+                  <div class="skill-level" aria-label="Skill level: Advanced, 80 percent">Advanced (80%)</div>
+                </div>
+              </a>
+
+              <a href="after-effects.html" class="skill-link adobe">
+                <i class="fab fa-adobe" aria-hidden="true"></i>
+                <div>
+                  <h3>After Effects</h3>
+                  <span>Motion Graphics & Visual Effects</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 70 percent">Intermediate (70%)</div>
+                </div>
+              </a>
+
+              <a href="premiere-pro.html" class="skill-link adobe">
+                <i class="fab fa-adobe" aria-hidden="true"></i>
+                <div>
+                  <h3>Premiere Pro</h3>
+                  <span>Video Editing & Post-Production</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 65 percent">Intermediate (65%)</div>
+                </div>
+              </a>
+
+              <a href="indesign.html" class="skill-link adobe">
+                <i class="fab fa-adobe" aria-hidden="true"></i>
+                <div>
+                  <h3>InDesign</h3>
+                  <span>Layout Design & Typography</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 60 percent">Intermediate (60%)</div>
+                </div>
+              </a>
+            </div>
+          </article>
+
+          <!-- Programming Languages -->
+          <article class="skill-category-card">
+            <h2><i class="fas fa-code" aria-hidden="true"></i> Programming Languages</h2>
+            <p>Technical skills bridging creativity and technology</p>
+
+            <div class="skill-links">
+              <a href="python.html" class="skill-link code">
+                <i class="fab fa-python" aria-hidden="true"></i>
+                <div>
+                  <h3>Python</h3>
+                  <span>Automation & Data Visualization</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 75 percent">Intermediate (75%)</div>
+                </div>
+              </a>
+
+              <a href="html-css.html" class="skill-link code">
+                <i class="fab fa-html5" aria-hidden="true"></i>
+                <div>
+                  <h3>HTML/CSS</h3>
+                  <span>Web Design & Front-End Development</span>
+                  <div class="skill-level" aria-label="Skill level: Advanced, 80 percent">Advanced (80%)</div>
+                </div>
+              </a>
+
+              <a href="java.html" class="skill-link code">
+                <i class="fab fa-java" aria-hidden="true"></i>
+                <div>
+                  <h3>Java</h3>
+                  <span>Application Development</span>
+                  <div class="skill-level" aria-label="Skill level: Beginner, 45 percent">Beginner (45%)</div>
+                </div>
+              </a>
+            </div>
+          </article>
+
+          <!-- Creative Skills -->
+          <article class="skill-category-card">
+            <h2><i class="fas fa-palette" aria-hidden="true"></i> Creative Skills</h2>
+            <p>Artistic abilities enhancing visual storytelling</p>
+
+            <div class="skill-links">
+              <a href="photography.html" class="skill-link creative">
+                <i class="fas fa-camera" aria-hidden="true"></i>
+                <div>
+                  <h3>Photography</h3>
+                  <span>Visual Storytelling & Composition</span>
+                  <div class="skill-level" aria-label="Skill level: Advanced, 85 percent">Advanced (85%)</div>
+                </div>
+              </a>
+
+              <a href="videography.html" class="skill-link creative">
+                <i class="fas fa-video" aria-hidden="true"></i>
+                <div>
+                  <h3>Videography</h3>
+                  <span>Cinematography & Video Production</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 70 percent">Intermediate (70%)</div>
+                </div>
+              </a>
+
+              <a href="music-composition.html" class="skill-link creative">
+                <i class="fas fa-music" aria-hidden="true"></i>
+                <div>
+                  <h3>Music Composition</h3>
+                  <span>Audio Production & Sound Design</span>
+                  <div class="skill-level" aria-label="Skill level: Intermediate, 65 percent">Intermediate (65%)</div>
+                </div>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="skills-stats" aria-label="Skills statistics">
+          <div class="stat-item">
+            <div class="stat-number">11</div>
+            <div class="stat-label">Total Skills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Adobe Tools</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Programming Languages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Creative Disciplines</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="skill-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">Ready to see these skills in action?</h2>
+        <div class="cta-buttons">
+          <a href="../portfolio.html" class="cta-btn primary">View Portfolio</a>
+          <a href="../index.html#contact" class="cta-btn secondary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="skill-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary's Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/skill-page.js"></script>
+</body>
+</html>

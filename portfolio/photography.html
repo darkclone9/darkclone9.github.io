@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Portfolio - Gary</title>
+  <meta name="description" content="Gary's photography portfolio featuring event coverage, portraits, and artistic compositions from 2023-2024">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar portfolio-nav" role="navigation" aria-label="Photography portfolio navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../portfolio.html" class="brand-link" aria-label="Go back to portfolio">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-title">
+        <h1>Photography Portfolio</h1>
+      </div>
+      <div class="nav-actions">
+        <a href="../index.html" class="nav-link" aria-label="Go to home page">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="gallery-hero" aria-labelledby="gallery-hero-title">
+      <div class="hero-background" aria-hidden="true" role="presentation">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            <span>Photography</span>
+          </div>
+          <h1 id="gallery-hero-title" class="hero-title">Capturing Moments</h1>
+          <p class="hero-subtitle">A collection of my photography work spanning events, portraits, and artistic compositions from 2023-2024</p>
+          <div class="hero-stats" aria-label="Photography statistics">
+            <div class="stat">
+              <span class="stat-number">100+</span>
+              <span class="stat-label">Photos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Sessions</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Categories</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters" aria-labelledby="filters-title">
+      <div class="container">
+        <h2 id="filters-title" class="visually-hidden">Filter Photos</h2>
+        <div class="filter-tabs" role="tablist" aria-label="Photo category filters">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="photoGallery">All Photos</button>
+          <button class="filter-btn" data-filter="events" role="tab" aria-selected="false" aria-controls="photoGallery">Events</button>
+          <button class="filter-btn" data-filter="portraits" role="tab" aria-selected="false" aria-controls="photoGallery">Portraits</button>
+          <button class="filter-btn" data-filter="artistic" role="tab" aria-selected="false" aria-controls="photoGallery">Artistic</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="visually-hidden">Photo Gallery</h2>
+        <div class="gallery-grid" id="photoGallery" role="tabpanel">
+          <!-- Event Photos -->
+          <article class="gallery-item" data-category="events" data-date="2023-08-29">
+            <div class="gallery-image">
+              <img src="assets/photos/events/campus-event-aug-29.jpg" alt="Campus Event Photography - August 29, 2023" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Campus Event</h3>
+                  <p>August 29, 2023</p>
+                  <button class="view-btn" type="button" aria-label="View Campus Event photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="events" data-date="2023-08-24">
+            <div class="gallery-image">
+              <img src="assets/photos/events/sports-event-aug-24.jpg" alt="Sports Event Photography - August 24, 2023" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Sports Event</h3>
+                  <p>August 24, 2023</p>
+                  <button class="view-btn" type="button" aria-label="View Sports Event photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="events" data-date="2023-08-30">
+            <div class="gallery-image">
+              <img src="assets/photos/events/social-event-aug-30.jpg" alt="Social Event Photography - August 30, 2023" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Social Gathering</h3>
+                  <p>August 30, 2023</p>
+                  <button class="view-btn" type="button" aria-label="View Social Gathering photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Portrait Photos -->
+          <article class="gallery-item" data-category="portraits">
+            <div class="gallery-image">
+              <img src="assets/photos/portraits/professional-portrait.jpg" alt="Professional Portrait Photography - Studio Session" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Professional Portrait</h3>
+                  <p>Studio Session</p>
+                  <button class="view-btn" type="button" aria-label="View Professional Portrait photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="portraits">
+            <div class="gallery-image">
+              <img src="assets/photos/portraits/casual-portrait.jpg" alt="Casual Portrait Photography - Outdoor Session" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Casual Portrait</h3>
+                  <p>Outdoor Session</p>
+                  <button class="view-btn" type="button" aria-label="View Casual Portrait photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artistic Photos -->
+          <article class="gallery-item" data-category="artistic">
+            <div class="gallery-image">
+              <img src="assets/photos/artistic/abstract-composition.jpg" alt="Abstract Artistic Photography - Creative Experiment" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Abstract Composition</h3>
+                  <p>Creative Experiment</p>
+                  <button class="view-btn" type="button" aria-label="View Abstract Composition photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="artistic">
+            <div class="gallery-image">
+              <img src="assets/photos/artistic/nature-art.jpg" alt="Nature Art Photography - Landscape Study" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="overlay-content">
+                  <h3>Nature Art</h3>
+                  <p>Landscape Study</p>
+                  <button class="view-btn" type="button" aria-label="View Nature Art photo in lightbox">
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-section">
+          <button class="load-more-btn" type="button" aria-label="Load more photos">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+            <span>Load More Photos</span>
+          </button>
+          <p class="gallery-note">Photos are sourced from D:\Belhaven files\Photography directory</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Details Section -->
+    <section class="photo-details" aria-labelledby="details-title">
+      <div class="container">
+        <h2 id="details-title" class="visually-hidden">Photography Details</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-camera" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Equipment Used</h3>
+              <p>Professional DSLR camera with various lenses for different shooting scenarios</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-palette" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Post-Processing</h3>
+              <p>Enhanced using Adobe Photoshop and Lightroom for color correction and artistic effects</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-clock" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Timeline</h3>
+              <p>Photography sessions conducted throughout 2023-2024 academic year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Close lightbox">&times;</button>
+      <img id="lightbox-image" src="" alt="">
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-description"></p>
+      </div>
+      <div class="lightbox-nav">
+        <button class="lightbox-prev" type="button" aria-label="Previous image">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="lightbox-next" type="button" aria-label="Next image">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary's Photography Portfolio. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>

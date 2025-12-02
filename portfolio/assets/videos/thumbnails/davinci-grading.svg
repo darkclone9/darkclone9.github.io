@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg5)"/>
+
+  <!-- DaVinci Resolve style color wheels -->
+  <!-- Lift wheel -->
+  <circle cx="150" cy="180" r="70" fill="none" stroke="#444" stroke-width="3"/>
+  <circle cx="150" cy="180" r="60" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="150" cy="180" r="50" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="150" cy="180" r="40" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="140" cy="170" r="8" fill="#ff6b6b"/>
+  <text x="150" y="270" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">LIFT</text>
+
+  <!-- Gamma wheel -->
+  <circle cx="400" cy="180" r="70" fill="none" stroke="#444" stroke-width="3"/>
+  <circle cx="400" cy="180" r="60" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="400" cy="180" r="50" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="400" cy="180" r="40" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="410" cy="175" r="8" fill="#4ecdc4"/>
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">GAMMA</text>
+
+  <!-- Gain wheel -->
+  <circle cx="650" cy="180" r="70" fill="none" stroke="#444" stroke-width="3"/>
+  <circle cx="650" cy="180" r="60" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="650" cy="180" r="50" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="650" cy="180" r="40" fill="none" stroke="#333" stroke-width="1"/>
+  <circle cx="660" cy="190" r="8" fill="#ffe66d"/>
+  <text x="650" y="270" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">GAIN</text>
+
+  <!-- Color curves -->
+  <rect x="50" y="310" width="300" height="100" fill="rgba(0,0,0,0.5)" rx="5"/>
+  <path d="M60,400 Q100,380 150,360 Q200,340 250,350 Q300,360 340,320" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+  <path d="M60,400 Q100,370 150,350 Q200,330 250,340 Q300,350 340,310" stroke="#4ecdc4" stroke-width="2" fill="none"/>
+  <path d="M60,400 Q100,390 150,370 Q200,350 250,360 Q300,370 340,330" stroke="#6b8cff" stroke-width="2" fill="none"/>
+
+  <!-- Scopes -->
+  <rect x="450" y="310" width="300" height="100" fill="rgba(0,0,0,0.5)" rx="5"/>
+  <path d="M460,400 L480,380 L500,390 L520,350 L540,370 L560,340 L580,360 L600,330 L620,350 L640,320 L660,340 L680,310 L700,330 L720,300 L740,320" stroke="#00ff00" stroke-width="1" fill="none"/>
+
+  <!-- Play button -->
+  <circle cx="400" cy="180" r="35" fill="rgba(255,255,255,0.9)"/>
+  <polygon points="390,162 390,198 415,180" fill="#1a1a1a"/>
+
+  <!-- Title -->
+  <text x="400" y="430" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Color Grading Project</text>
+
+  <!-- Video icon badge -->
+  <rect x="20" y="20" width="80" height="30" rx="5" fill="rgba(255,0,0,0.9)"/>
+  <text x="60" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">VIDEO</text>
+
+  <!-- DaVinci badge -->
+  <rect x="700" y="20" width="80" height="30" rx="5" fill="rgba(255,100,0,0.8)"/>
+  <text x="740" y="40" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">DAVINCI</text>
+</svg>

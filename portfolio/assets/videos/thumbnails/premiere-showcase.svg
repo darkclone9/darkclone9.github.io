@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00005c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9999ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg4)"/>
+
+  <!-- Premiere Pro style interface mockup -->
+  <!-- Top toolbar -->
+  <rect x="0" y="0" width="800" height="40" fill="rgba(0,0,0,0.5)"/>
+  <rect x="10" y="10" width="60" height="20" fill="rgba(255,255,255,0.2)" rx="3"/>
+  <rect x="80" y="10" width="60" height="20" fill="rgba(255,255,255,0.2)" rx="3"/>
+  <rect x="150" y="10" width="60" height="20" fill="rgba(255,255,255,0.2)" rx="3"/>
+
+  <!-- Preview window -->
+  <rect x="200" y="60" width="400" height="225" fill="rgba(0,0,0,0.6)" rx="5"/>
+  <rect x="210" y="70" width="380" height="180" fill="#1a1a1a"/>
+
+  <!-- Timeline -->
+  <rect x="50" y="310" width="700" height="120" fill="rgba(0,0,0,0.4)" rx="5"/>
+
+  <!-- Video tracks -->
+  <rect x="60" y="320" width="680" height="25" fill="rgba(255,255,255,0.1)"/>
+  <rect x="100" y="322" width="200" height="21" fill="#9999ff" rx="2"/>
+  <rect x="320" y="322" width="150" height="21" fill="#9999ff" rx="2"/>
+  <rect x="490" y="322" width="230" height="21" fill="#9999ff" rx="2"/>
+
+  <!-- Audio tracks -->
+  <rect x="60" y="350" width="680" height="25" fill="rgba(255,255,255,0.1)"/>
+  <rect x="100" y="352" width="200" height="21" fill="#00cc66" rx="2"/>
+  <rect x="320" y="352" width="150" height="21" fill="#00cc66" rx="2"/>
+  <rect x="490" y="352" width="230" height="21" fill="#00cc66" rx="2"/>
+
+  <!-- Audio waveform simulation -->
+  <rect x="60" y="380" width="680" height="40" fill="rgba(255,255,255,0.1)"/>
+  <path d="M70,400 Q90,385 110,400 Q130,415 150,400 Q170,385 190,400 Q210,415 230,400 Q250,385 270,400 Q290,415 310,400 Q330,385 350,400 Q370,415 390,400 Q410,385 430,400 Q450,415 470,400 Q490,385 510,400 Q530,415 550,400 Q570,385 590,400 Q610,415 630,400 Q650,385 670,400 Q690,415 710,400 Q730,385 730,400" stroke="#00cc66" stroke-width="2" fill="none"/>
+
+  <!-- Playhead -->
+  <rect x="395" y="305" width="10" height="130" fill="#ff6b6b" rx="2"/>
+
+  <!-- Play button -->
+  <circle cx="400" cy="160" r="40" fill="rgba(255,255,255,0.9)"/>
+  <polygon points="388,138 388,182 420,160" fill="#00005c"/>
+
+  <!-- Title -->
+  <text x="400" y="275" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Professional Edit Showcase</text>
+
+  <!-- Video icon badge -->
+  <rect x="20" y="50" width="80" height="30" rx="5" fill="rgba(255,0,0,0.9)"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">VIDEO</text>
+
+  <!-- Premiere badge -->
+  <rect x="700" y="50" width="80" height="30" rx="5" fill="rgba(153,0,255,0.8)"/>
+  <text x="740" y="70" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">PREMIERE</text>
+</svg>

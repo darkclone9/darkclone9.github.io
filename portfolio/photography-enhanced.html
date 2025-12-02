@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Photography Portfolio - Gary</title>
+  <meta name="description" content="Gary's enhanced photography portfolio featuring campus life, sports, social events, portraits, and creative compositions from 2023-2024">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar portfolio-nav" role="navigation" aria-label="Enhanced photography portfolio navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../portfolio.html" class="brand-link" aria-label="Go back to portfolio">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+      <div class="nav-title">
+        <h1>Photography Portfolio</h1>
+      </div>
+      <div class="nav-actions">
+        <a href="../index.html" class="nav-link" aria-label="Go to home page">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main id="main-content">
+    <!-- Hero Section with Featured Carousel -->
+    <section class="gallery-hero" aria-labelledby="hero-title">
+      <div class="hero-background" aria-hidden="true" role="presentation">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            <span>Photography</span>
+          </div>
+          <h1 id="hero-title" class="hero-title">Capturing Life's Moments</h1>
+          <p class="hero-subtitle">A curated collection of my best photography work spanning campus life, sports, social events, portraits, and creative compositions from 2023-2024</p>
+
+          <!-- Stats -->
+          <div class="hero-stats" aria-label="Photography statistics">
+            <div class="stat">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Photos Taken</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Photo Sessions</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5</span>
+              <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Best Selections</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Carousel -->
+    <section class="featured-section" aria-labelledby="featured-title">
+      <div class="container">
+        <h2 id="featured-title">Featured Photography</h2>
+        <div class="carousel-container" id="featuredCarousel" role="region" aria-label="Featured photography carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <img src="assets/photos/campus-life/campus-quad-1.jpg" alt="Campus Life Photography - Vibrant campus activities and student life" loading="lazy">
+              <div class="carousel-overlay">
+                <h3>Campus Life</h3>
+                <p>Capturing the vibrant energy of campus activities and student life</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/photos/sports/sports-action-2.jpg" alt="Sports Photography - Dynamic athletic excellence" loading="lazy">
+              <div class="carousel-overlay">
+                <h3>Sports Action</h3>
+                <p>Dynamic sports photography showcasing athletic excellence</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/photos/portraits/portrait-professional-1.jpg" alt="Portrait Photography - Professional portraits highlighting personality" loading="lazy">
+              <div class="carousel-overlay">
+                <h3>Professional Portraits</h3>
+                <p>Carefully crafted portraits highlighting individual personality</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/photos/creative/creative-edit-1.jpg" alt="Creative Photography - Artistic and experimental compositions" loading="lazy">
+              <div class="carousel-overlay">
+                <h3>Creative Compositions</h3>
+                <p>Artistic and experimental photography with creative editing</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-nav carousel-prev" type="button" aria-label="Previous slide">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-nav carousel-next" type="button" aria-label="Next slide">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators" role="tablist" aria-label="Carousel slide indicators"></div>
+      </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="gallery-filters" aria-labelledby="filters-title">
+      <div class="container">
+        <h2 id="filters-title" class="visually-hidden">Filter by Category</h2>
+        <div class="filter-tabs" role="tablist" aria-label="Photo category filters">
+          <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">All Photos</button>
+          <button class="filter-btn" data-category="campus-life" role="tab" aria-selected="false">Campus Life</button>
+          <button class="filter-btn" data-category="sports" role="tab" aria-selected="false">Sports</button>
+          <button class="filter-btn" data-category="social-events" role="tab" aria-selected="false">Social Events</button>
+          <button class="filter-btn" data-category="portraits" role="tab" aria-selected="false">Portraits</button>
+          <button class="filter-btn" data-category="creative" role="tab" aria-selected="false">Creative</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Gallery -->
+    <section class="photo-gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="visually-hidden">Photo Gallery</h2>
+        <div class="gallery-grid enhanced-gallery" id="photoGallery" role="tabpanel">
+          <!-- Campus Life Photos -->
+          <article class="gallery-item" data-category="campus-life">
+            <img src="assets/photos/campus-life/campus-quad-1.jpg" alt="Campus Quad Scene - Beautiful campus architecture and student activities" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Campus Life</span>
+              <h3>Campus Quad Scene</h3>
+              <p>Beautiful campus architecture and student activities</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="campus-life">
+            <img src="assets/photos/campus-life/campus-quad-2.jpg" alt="Campus Atmosphere - Capturing the essence of university life" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Campus Life</span>
+              <h3>Campus Atmosphere</h3>
+              <p>Capturing the essence of university life</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="campus-life">
+            <img src="assets/photos/campus-life/campus-quad-3.jpg" alt="Student Activities - Dynamic campus life and student engagement" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Campus Life</span>
+              <h3>Student Activities</h3>
+              <p>Dynamic campus life and student engagement</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="campus-life">
+            <img src="assets/photos/campus-life/campus-quad-4.jpg" alt="Campus Events - Special moments from campus gatherings" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Campus Life</span>
+              <h3>Campus Events</h3>
+              <p>Special moments from campus gatherings</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="campus-life">
+            <img src="assets/photos/campus-life/campus-quad-5.jpg" alt="University Spirit - The heart of campus community" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Campus Life</span>
+              <h3>University Spirit</h3>
+              <p>The heart of campus community</p>
+            </div>
+          </article>
+
+          <!-- Sports Photos -->
+          <article class="gallery-item" data-category="sports">
+            <img src="assets/photos/sports/sports-action-1.jpg" alt="Athletic Excellence - Capturing peak athletic performance" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Sports</span>
+              <h3>Athletic Excellence</h3>
+              <p>Capturing peak athletic performance</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="sports">
+            <img src="assets/photos/sports/sports-action-2.jpg" alt="Game Intensity - The thrill and energy of competitive sports" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Sports</span>
+              <h3>Game Intensity</h3>
+              <p>The thrill and energy of competitive sports</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="sports">
+            <img src="assets/photos/sports/sports-action-3.jpg" alt="Team Spirit - Collaboration and teamwork in action" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Sports</span>
+              <h3>Team Spirit</h3>
+              <p>Collaboration and teamwork in action</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="sports">
+            <img src="assets/photos/sports/sports-action-4.jpg" alt="Victory Moments - Celebrating achievements and success" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Sports</span>
+              <h3>Victory Moments</h3>
+              <p>Celebrating achievements and success</p>
+            </div>
+          </article>
+
+          <!-- Social Events Photos -->
+          <article class="gallery-item" data-category="social-events">
+            <img src="assets/photos/social-events/social-gathering-1.jpg" alt="Community Gathering - Bringing people together through shared experiences" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Social Events</span>
+              <h3>Community Gathering</h3>
+              <p>Bringing people together through shared experiences</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="social-events">
+            <img src="assets/photos/social-events/social-gathering-2.jpg" alt="Social Connections - Meaningful interactions and friendships" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Social Events</span>
+              <h3>Social Connections</h3>
+              <p>Meaningful interactions and friendships</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="social-events">
+            <img src="assets/photos/social-events/social-gathering-3.jpg" alt="Celebration Moments - Joyful occasions and memorable celebrations" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Social Events</span>
+              <h3>Celebration Moments</h3>
+              <p>Joyful occasions and memorable celebrations</p>
+            </div>
+          </article>
+
+          <!-- Portrait Photos -->
+          <article class="gallery-item" data-category="portraits">
+            <img src="assets/photos/portraits/portrait-professional-1.jpg" alt="Professional Portrait - Polished studio portrait with professional lighting" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Portraits</span>
+              <h3>Professional Portrait</h3>
+              <p>Polished studio portrait with professional lighting</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="portraits">
+            <img src="assets/photos/portraits/portrait-casual-1.jpg" alt="Natural Portrait - Relaxed and authentic personality capture" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Portraits</span>
+              <h3>Natural Portrait</h3>
+              <p>Relaxed and authentic personality capture</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="portraits">
+            <img src="assets/photos/portraits/portrait-casual-2.jpg" alt="Lifestyle Portrait - Candid moments showcasing individual character" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Portraits</span>
+              <h3>Lifestyle Portrait</h3>
+              <p>Candid moments showcasing individual character</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="portraits">
+            <img src="assets/photos/portraits/portrait-casual-3.jpg" alt="Environmental Portrait - Subject in their natural environment" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Portraits</span>
+              <h3>Environmental Portrait</h3>
+              <p>Subject in their natural environment</p>
+            </div>
+          </article>
+
+          <!-- Creative Photos -->
+          <article class="gallery-item" data-category="creative">
+            <img src="assets/photos/creative/creative-edit-1.jpg" alt="Artistic Vision - Creative editing and artistic interpretation" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Creative</span>
+              <h3>Artistic Vision</h3>
+              <p>Creative editing and artistic interpretation</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="creative">
+            <img src="assets/photos/creative/creative-fountain.jpg" alt="Fountain Art - Architectural beauty with artistic enhancement" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Creative</span>
+              <h3>Fountain Art</h3>
+              <p>Architectural beauty with artistic enhancement</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="creative">
+            <img src="assets/photos/creative/creative-edit-2.jpg" alt="Abstract Composition - Experimental photography with creative processing" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Creative</span>
+              <h3>Abstract Composition</h3>
+              <p>Experimental photography with creative processing</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-category="creative">
+            <img src="assets/photos/creative/creative-edit-3.jpg" alt="Digital Art - Blending photography with digital artistry" loading="lazy">
+            <div class="gallery-info">
+              <span class="category-badge">Creative</span>
+              <h3>Digital Art</h3>
+              <p>Blending photography with digital artistry</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment & Techniques Section -->
+    <section class="photo-details" aria-labelledby="info-title">
+      <div class="container">
+        <h2 id="info-title" class="visually-hidden">Equipment and Techniques</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-camera" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Equipment Used</h3>
+              <p>Professional DSLR camera with various lenses for different shooting scenarios and lighting conditions</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-palette" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Post-Processing</h3>
+              <p>Enhanced using Adobe Photoshop and Lightroom for color correction, artistic effects, and professional finishing</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-calendar" aria-hidden="true"></i>
+            </div>
+            <div class="detail-content">
+              <h3>Timeline</h3>
+              <p>Photography sessions conducted throughout 2023-2024 academic year across various campus events and locations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Close lightbox">&times;</button>
+      <img id="lightbox-image" src="" alt="">
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-description"></p>
+        <div id="lightbox-category"></div>
+      </div>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary's Photography Portfolio. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>

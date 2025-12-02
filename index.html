@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gary - Portfolio</title>
+  <meta name="description" content="Gary's professional portfolio showcasing creative works in graphic design, photography, videography, and programming">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Main navigation links -->
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#featured-projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#works" class="nav-link" role="menuitem">Works</a></li>
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <!-- Profile section -->
+      <div class="nav-profile">
+        <div class="profile-img" title="Gary's Profile" aria-label="Gary's profile avatar">G</div>
+      </div>
+
+      <!-- Right side actions -->
+      <div class="nav-actions">
+        <button class="login-btn" aria-label="Login to your account">Login</button>
+
+        <!-- Social media icons -->
+        <div class="social-icons" role="list" aria-label="Social media links">
+          <a href="#" class="social-icon" aria-label="View notifications" title="Notifications" role="listitem">
+            <i class="fas fa-bell" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Join our Discord server" title="Discord" role="listitem">
+            <i class="fab fa-discord" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Send an email" title="Email" role="listitem">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Visit YouTube channel" title="YouTube" role="listitem">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="hamburger-line" aria-hidden="true"></span>
+        <span class="hamburger-line" aria-hidden="true"></span>
+        <span class="hamburger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main id="main-content">
+    <!-- Hero section -->
+    <section id="home" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-text-line">HI, I'M GARY!</span>
+          </h1>
+
+          <!-- Professional tagline -->
+          <div class="hero-tagline">
+            <p class="tagline-text">Creative Graphic Designer & Digital Artist</p>
+            <p class="tagline-subtitle">Bringing ideas to life through visual storytelling</p>
+          </div>
+
+          <!-- Key skills showcase -->
+          <div class="skills-showcase" aria-label="Skills overview">
+            <div class="skill-category">
+              <h3>Design Tools</h3>
+              <div class="skill-icons">
+                <a href="skills/illustrator.html" class="skill-badge adobe" data-skill="illustrator">
+                  <i class="fab fa-adobe" aria-hidden="true"></i>
+                  Illustrator
+                </a>
+                <a href="skills/photoshop.html" class="skill-badge adobe" data-skill="photoshop">
+                  <i class="fab fa-adobe" aria-hidden="true"></i>
+                  Photoshop
+                </a>
+                <a href="skills/after-effects.html" class="skill-badge adobe" data-skill="after-effects">
+                  <i class="fab fa-adobe" aria-hidden="true"></i>
+                  After Effects
+                </a>
+                <a href="skills/premiere-pro.html" class="skill-badge adobe" data-skill="premiere-pro">
+                  <i class="fab fa-adobe" aria-hidden="true"></i>
+                  Premiere Pro
+                </a>
+                <a href="skills/indesign.html" class="skill-badge adobe" data-skill="indesign">
+                  <i class="fab fa-adobe" aria-hidden="true"></i>
+                  InDesign
+                </a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Technical Skills</h3>
+              <div class="skill-icons">
+                <a href="skills/python.html" class="skill-badge code" data-skill="python">
+                  <i class="fab fa-python" aria-hidden="true"></i>
+                  Python
+                </a>
+                <a href="skills/html-css.html" class="skill-badge code" data-skill="html-css">
+                  <i class="fab fa-html5" aria-hidden="true"></i>
+                  HTML/CSS
+                </a>
+                <a href="skills/java.html" class="skill-badge code" data-skill="java">
+                  <i class="fab fa-java" aria-hidden="true"></i>
+                  Java
+                </a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Creative Abilities</h3>
+              <div class="skill-icons">
+                <a href="skills/photography.html" class="skill-badge creative" data-skill="photography">
+                  <i class="fas fa-camera" aria-hidden="true"></i>
+                  Photography
+                </a>
+                <a href="skills/videography.html" class="skill-badge creative" data-skill="videography">
+                  <i class="fas fa-video" aria-hidden="true"></i>
+                  Videography
+                </a>
+                <a href="skills/music-composition.html" class="skill-badge creative" data-skill="music">
+                  <i class="fas fa-music" aria-hidden="true"></i>
+                  Music Composition
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement metrics -->
+          <div class="achievement-metrics" aria-label="Achievement statistics">
+            <div class="metric">
+              <span class="metric-number">5+</span>
+              <span class="metric-label">Adobe Tools Mastered</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">3</span>
+              <span class="metric-label">Programming Languages</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Passion for Design</span>
+            </div>
+          </div>
+
+          <!-- Professional summary -->
+          <div class="professional-summary">
+            <p>Versatile creative professional combining artistic vision with technical expertise. Passionate about creating compelling visual experiences across digital and traditional media.</p>
+
+            <!-- Creative specialties -->
+            <div class="creative-specialties" aria-label="Creative specialties">
+              <span class="specialty-tag">Visual Identity</span>
+              <span class="specialty-tag">Motion Graphics</span>
+              <span class="specialty-tag">Web Design</span>
+              <span class="specialty-tag">Photography</span>
+              <span class="specialty-tag">Video Production</span>
+            </div>
+          </div>
+
+          <!-- Call to action -->
+          <div class="hero-cta">
+            <a href="#works" class="cta-button primary">
+              <i class="fas fa-folder-open" aria-hidden="true"></i>
+              VIEW MY PORTFOLIO
+            </a>
+            <a href="#contact" class="cta-button secondary">
+              <i class="fas fa-handshake" aria-hidden="true"></i>
+              HIRE ME FOR INTERNSHIP
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background shapes (decorative) -->
+      <div class="bg-shapes" aria-hidden="true" role="presentation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="organic-shape organic-1"></div>
+        <div class="organic-shape organic-2"></div>
+      </div>
+
+      <!-- Pause/Play button -->
+      <button class="animation-control" aria-label="Pause background animations" aria-pressed="false">
+        <i class="fas fa-pause" aria-hidden="true"></i>
+      </button>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured-projects" class="featured-projects-section" aria-labelledby="featured-projects-title">
+      <div class="animated-background" aria-hidden="true" role="presentation">
+        <div class="floating-particles">
+          <div class="particle particle-1"></div>
+          <div class="particle particle-2"></div>
+          <div class="particle particle-3"></div>
+          <div class="particle particle-4"></div>
+          <div class="particle particle-5"></div>
+          <div class="particle particle-6"></div>
+          <div class="particle particle-7"></div>
+          <div class="particle particle-8"></div>
+        </div>
+        <div class="gradient-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-header fade-in-element">
+          <h2 id="featured-projects-title" class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Showcasing my best creative work and technical expertise</p>
+        </div>
+
+        <div class="projects-grid fade-in-element">
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-tools">
+                  <span class="tool-tag adobe">Illustrator</span>
+                  <span class="tool-tag adobe">Photoshop</span>
+                </div>
+                <a href="portfolio.html" class="project-link">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  View Project
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Brand Identity Design</h3>
+              <p class="project-description">Complete visual identity system for a modern tech startup, including logo design, color palette, and brand guidelines.</p>
+              <div class="project-stats">
+                <span class="stat">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                  <span class="visually-hidden">Views:</span> 2.5K views
+                </span>
+                <span class="stat">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                  <span class="visually-hidden">Likes:</span> 180 likes
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-tools">
+                  <span class="tool-tag adobe">After Effects</span>
+                  <span class="tool-tag adobe">Premiere Pro</span>
+                </div>
+                <a href="portfolio/video-projects.html" class="project-link">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                  Watch Demo
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Motion Graphics Animation</h3>
+              <p class="project-description">Dynamic animated explainer video combining 2D graphics, typography, and smooth transitions for product showcase.</p>
+              <div class="project-stats">
+                <span class="stat">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                  <span class="visually-hidden">Views:</span> 4.1K views
+                </span>
+                <span class="stat">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                  <span class="visually-hidden">Likes:</span> 320 likes
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-tools">
+                  <span class="tool-tag code">HTML/CSS</span>
+                  <span class="tool-tag code">JavaScript</span>
+                </div>
+                <a href="portfolio.html" class="project-link">
+                  <i class="fas fa-code" aria-hidden="true"></i>
+                  View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Interactive Web Portfolio</h3>
+              <p class="project-description">Responsive portfolio website with modern animations, optimized performance, and seamless user experience.</p>
+              <div class="project-stats">
+                <span class="stat">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                  <span class="visually-hidden">Views:</span> 1.8K views
+                </span>
+                <span class="stat">
+                  <i class="fas fa-heart" aria-hidden="true"></i>
+                  <span class="visually-hidden">Likes:</span> 95 likes
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-cta fade-in-element">
+          <a href="portfolio.html" class="cta-button primary">
+            <i class="fas fa-folder-open" aria-hidden="true"></i>
+            VIEW ALL PROJECTS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Works Section -->
+    <section id="works" class="works-section" aria-labelledby="works-title">
+      <div class="works-background" aria-hidden="true" role="presentation">
+        <div class="flowing-ribbons">
+          <div class="ribbon ribbon-1"></div>
+          <div class="ribbon ribbon-2"></div>
+          <div class="ribbon ribbon-3"></div>
+          <div class="ribbon ribbon-4"></div>
+        </div>
+        <div class="creative-elements">
+          <div class="floating-shape shape-1">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="floating-shape shape-2">
+            <i class="fas fa-camera"></i>
+          </div>
+          <div class="floating-shape shape-3">
+            <i class="fas fa-music"></i>
+          </div>
+          <div class="floating-shape shape-4">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="floating-shape shape-5">
+            <i class="fas fa-video"></i>
+          </div>
+        </div>
+        <div class="works-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="works-header fade-in-element">
+          <h2 id="works-title" class="works-title">My Creative Universe</h2>
+          <p class="works-subtitle">Explore my complete portfolio of design, development, and multimedia projects</p>
+          <p class="works-description">From graphic design and web development to music composition and videography, discover the full spectrum of my creative work and technical expertise.</p>
+        </div>
+
+        <div class="works-stats fade-in-element" aria-label="Portfolio statistics">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Skill Categories</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+
+        <div class="works-cta fade-in-element">
+          <a href="portfolio.html" class="works-button primary">
+            <span class="button-text">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
+              Explore My Portfolio
+            </span>
+            <span class="button-bg" aria-hidden="true"></span>
+          </a>
+          <p class="cta-note">View detailed project breakdowns, case studies, and interactive demos</p>
+        </div>
+
+        <div class="skill-preview fade-in-element" aria-label="Skill categories preview">
+          <div class="skill-category">
+            <div class="skill-icon adobe">
+              <i class="fab fa-adobe" aria-hidden="true"></i>
+            </div>
+            <h4>Design</h4>
+            <p>Adobe Creative Suite</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon code">
+              <i class="fas fa-code" aria-hidden="true"></i>
+            </div>
+            <h4>Development</h4>
+            <p>Web Technologies</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon music">
+              <i class="fas fa-music" aria-hidden="true"></i>
+            </div>
+            <h4>Music</h4>
+            <p>Composition & Guitar</p>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon media">
+              <i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+            <h4>Media</h4>
+            <p>Photo & Video</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About Me</h2>
+        <div class="about-content">
+          <p class="about-intro">I'm a passionate creative professional and student with a diverse skill set spanning graphic design, web development, photography, videography, and music composition.</p>
+          <p>My journey in the creative field began with a fascination for visual storytelling, which has evolved into expertise across multiple Adobe Creative Suite applications and programming languages. I believe in the power of combining artistic vision with technical precision to create meaningful digital experiences.</p>
+          <p>When I'm not designing or coding, you can find me exploring new photography techniques, composing music, or working on personal creative projects that push my boundaries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+          <p class="contact-intro">Interested in collaborating or have a project in mind? I'd love to hear from you!</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <h3>Email</h3>
+              <p>Reach out for project inquiries or collaborations</p>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-discord" aria-hidden="true"></i>
+              <h3>Discord</h3>
+              <p>Connect with me for quick chats and discussions</p>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <h3>LinkedIn</h3>
+              <p>View my professional profile and connect</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary's Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

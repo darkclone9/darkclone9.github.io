@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gary's Portfolio - Creative Works</title>
+  <meta name="description" content="Explore Gary's complete portfolio of creative works including photography, video projects, graphic design, and web development">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar portfolio-nav" role="navigation" aria-label="Portfolio navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link" aria-label="Go back to home page">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+      <div class="nav-title">
+        <h1>Gary's Portfolio</h1>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="portfolio-hero" aria-labelledby="portfolio-hero-title">
+    <div class="hero-background" aria-hidden="true" role="presentation">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 id="portfolio-hero-title" class="hero-title">My Creative Universe</h1>
+        <p class="hero-subtitle">Explore my complete collection of creative work across design, development, photography, and multimedia projects</p>
+        <div class="hero-stats" aria-label="Portfolio statistics">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Categories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Categories -->
+  <section class="portfolio-categories" aria-labelledby="categories-title">
+    <div class="container">
+      <h2 id="categories-title" class="visually-hidden">Portfolio Categories</h2>
+      <div class="categories-grid">
+        <!-- Photography Portfolio -->
+        <article class="category-card" data-category="photography">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-camera" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Photography</h3>
+            <p class="card-description">Professional photography sessions, event coverage, and artistic compositions</p>
+            <div class="card-stats">
+              <span><i class="fas fa-images" aria-hidden="true"></i> 100+ Photos</span>
+              <span><i class="fas fa-calendar" aria-hidden="true"></i> 2023-2024</span>
+            </div>
+            <a href="portfolio/photography.html" class="card-button">
+              <span>View Gallery</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Video Projects -->
+        <article class="category-card" data-category="video">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Video Projects</h3>
+            <p class="card-description">Video editing, motion graphics, and multimedia content creation</p>
+            <div class="card-stats">
+              <span><i class="fas fa-play" aria-hidden="true"></i> 25+ Videos</span>
+              <span><i class="fas fa-clock" aria-hidden="true"></i> 50+ Hours</span>
+            </div>
+            <a href="portfolio/video-projects.html" class="card-button">
+              <span>Watch Reels</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Adobe Creative -->
+        <article class="category-card" data-category="adobe">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fab fa-adobe" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Adobe Creative</h3>
+            <p class="card-description">Graphic design, illustrations, and digital art using Adobe Creative Suite</p>
+            <div class="card-stats">
+              <span><i class="fas fa-palette" aria-hidden="true"></i> 30+ Designs</span>
+              <span><i class="fas fa-tools" aria-hidden="true"></i> 5 Tools</span>
+            </div>
+            <a href="skills/index.html" class="card-button">
+              <span>View Skills</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Club Activities -->
+        <article class="category-card" data-category="clubs">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-users" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Club Activities</h3>
+            <p class="card-description">Esports and Film club projects, event coverage, and collaborative work</p>
+            <div class="card-stats">
+              <span><i class="fas fa-gamepad" aria-hidden="true"></i> Esports</span>
+              <span><i class="fas fa-film" aria-hidden="true"></i> Film Club</span>
+            </div>
+            <a href="portfolio/photography.html" class="card-button">
+              <span>View Events</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Personal Projects -->
+        <article class="category-card" data-category="personal">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Personal Projects</h3>
+            <p class="card-description">Individual creative experiments, passion projects, and artistic explorations</p>
+            <div class="card-stats">
+              <span><i class="fas fa-star" aria-hidden="true"></i> Featured</span>
+              <span><i class="fas fa-heart" aria-hidden="true"></i> Passion</span>
+            </div>
+            <a href="portfolio/photography-enhanced.html" class="card-button">
+              <span>Explore Work</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Web Development -->
+        <article class="category-card" data-category="web">
+          <div class="card-background" aria-hidden="true">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-code" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">Web Development</h3>
+            <p class="card-description">Websites, web applications, and interactive digital experiences</p>
+            <div class="card-stats">
+              <span><i class="fas fa-laptop-code" aria-hidden="true"></i> 10+ Sites</span>
+              <span><i class="fas fa-mobile-alt" aria-hidden="true"></i> Responsive</span>
+            </div>
+            <a href="skills/html-css.html" class="card-button">
+              <span>View Skills</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="portfolio-stats" aria-labelledby="quick-stats-title">
+    <div class="container">
+      <h2 id="quick-stats-title" class="visually-hidden">Quick Actions</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-download" aria-hidden="true"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Portfolio Download</h3>
+            <p>Get a PDF version of my complete portfolio</p>
+            <a href="#" class="stat-link" aria-label="Download portfolio as PDF">Download PDF</a>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Contact Me</h3>
+            <p>Interested in collaboration or have questions?</p>
+            <a href="index.html#contact" class="stat-link" aria-label="Go to contact section">Get in Touch</a>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-share-alt" aria-hidden="true"></i>
+          </div>
+          <div class="stat-content">
+            <h3>Share Portfolio</h3>
+            <p>Share my work with others</p>
+            <button type="button" class="stat-link" id="share-portfolio-btn" aria-label="Share this portfolio">Share Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary's Portfolio. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
