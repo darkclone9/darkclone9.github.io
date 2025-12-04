@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Editor - Gary Of Cinema</title>
+  <meta name="description" content="Create and manage blog posts for Gary Of Cinema">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Quill Editor CSS -->
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/blog-editor.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="editor-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Site</span>
+      </a>
+      <h1 class="nav-title">Blog Post Editor</h1>
+      <div class="nav-actions">
+        <button class="btn btn-secondary" id="previewBtn">
+          <i class="fas fa-eye"></i> Preview
+        </button>
+        <button class="btn btn-primary" id="saveBtn">
+          <i class="fas fa-save"></i> Save Post
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="editor-main">
+    <div class="editor-container">
+      <!-- Sidebar - Post List -->
+      <aside class="editor-sidebar">
+        <div class="sidebar-header">
+          <h2>Posts</h2>
+          <button class="btn btn-icon" id="newPostBtn" title="New Post">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <div class="post-search">
+          <input type="text" id="postSearch" placeholder="Search posts...">
+          <i class="fas fa-search"></i>
+        </div>
+        <ul class="post-list" id="postList">
+          <!-- Dynamically populated -->
+        </ul>
+        <div class="sidebar-footer">
+          <button class="btn btn-outline" id="downloadJsonBtn">
+            <i class="fas fa-download"></i> Download JSON
+          </button>
+          <button class="btn btn-outline" id="importJsonBtn">
+            <i class="fas fa-upload"></i> Import JSON
+          </button>
+          <input type="file" id="jsonFileInput" accept=".json" hidden>
+        </div>
+      </aside>
+
+      <!-- Editor Panel -->
+      <section class="editor-panel">
+        <form id="postForm" class="post-form">
+          <!-- Title -->
+          <div class="form-group">
+            <label for="postTitle">Post Title <span class="required">*</span></label>
+            <input type="text" id="postTitle" name="title" placeholder="Enter post title..." required>
+          </div>
+
+          <!-- Slug -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="postSlug">URL Slug <span class="required">*</span></label>
+              <input type="text" id="postSlug" name="slug" placeholder="post-url-slug">
+            </div>
+            <div class="form-group">
+              <label for="postDate">Date <span class="required">*</span></label>
+              <input type="date" id="postDate" name="date" required>
+            </div>
+          </div>
+
+          <!-- Excerpt -->
+          <div class="form-group">
+            <label for="postExcerpt">Excerpt <span class="required">*</span></label>
+            <textarea id="postExcerpt" name="excerpt" rows="3" placeholder="Brief description of the post..." required></textarea>
+          </div>
+
+          <!-- Content Editor -->
+          <div class="form-group">
+            <label>Content <span class="required">*</span></label>
+            <div id="quillToolbar">
+              <span class="ql-formats">
+                <select class="ql-header">
+                  <option value="1">Heading 1</option>
+                  <option value="2">Heading 2</option>
+                  <option value="3">Heading 3</option>
+                  <option selected>Normal</option>
+                </select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-bold"></button>
+                <button class="ql-italic"></button>
+                <button class="ql-underline"></button>
+                <button class="ql-strike"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-blockquote"></button>
+                <button class="ql-code-block"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-list" value="ordered"></button>
+                <button class="ql-list" value="bullet"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-link"></button>
+                <button class="ql-image"></button>
+                <button class="ql-video"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-clean"></button>
+              </span>
+            </div>
+            <div id="quillEditor"></div>
+          </div>
+
+          <!-- Featured Image -->
+          <div class="form-group">
+            <label>Featured Image</label>
+            <div class="image-upload-area" id="imageUploadArea">
+              <div class="upload-placeholder" id="uploadPlaceholder">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop an image or click to browse</p>
+                <span>Supports: JPG, PNG, GIF, WebP</span>
+              </div>
+              <img id="imagePreview" class="image-preview" src="" alt="Preview" style="display: none;">
+              <button type="button" class="btn btn-remove" id="removeImageBtn" style="display: none;">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <input type="file" id="featuredImage" accept="image/*" hidden>
+            <div class="form-help">
+              <input type="text" id="imageUrl" placeholder="Or enter image URL...">
+            </div>
+          </div>
+
+          <!-- Metadata Row -->
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="postAuthor">Author</label>
+              <input type="text" id="postAuthor" name="author" value="Gary" placeholder="Author name">
+            </div>
+            <div class="form-group">
+              <label for="postCategory">Category <span class="required">*</span></label>
+              <select id="postCategory" name="category" required>
+                <option value="">Select category...</option>
+                <option value="Design">Design</option>
+                <option value="Tutorial">Tutorial</option>
+                <option value="Behind the Scenes">Behind the Scenes</option>
+                <option value="Inspiration">Inspiration</option>
+                <option value="News">News</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="postReadTime">Read Time</label>
+              <input type="text" id="postReadTime" name="readTime" value="5 min read" placeholder="5 min read">
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="form-group">
+            <label for="postTags">Tags</label>
+            <div class="tags-input-container">
+              <div class="tags-list" id="tagsList"></div>
+              <input type="text" id="tagsInput" placeholder="Type and press Enter to add tags...">
+            </div>
+          </div>
+
+          <!-- Featured Toggle -->
+          <div class="form-group form-toggle">
+            <label class="toggle-label">
+              <input type="checkbox" id="postFeatured" name="featured">
+              <span class="toggle-switch"></span>
+              <span class="toggle-text">Featured Post</span>
+            </label>
+            <p class="form-help-text">Featured posts appear prominently on the blog page</p>
+          </div>
+
+          <!-- Hidden ID field for editing -->
+          <input type="hidden" id="postId" name="id">
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Preview Modal -->
+  <div class="modal" id="previewModal">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content preview-modal-content">
+      <button class="modal-close" data-close-modal>
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="preview-container" id="previewContainer">
+        <!-- Preview content rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal" id="deleteModal">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content delete-modal-content">
+      <div class="modal-header">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Delete Post?</h3>
+      </div>
+      <p>Are you sure you want to delete "<span id="deletePostTitle"></span>"?</p>
+      <p class="warning-text">This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" data-close-modal>Cancel</button>
+        <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- GitHub Commit Modal -->
+  <div class="modal" id="githubModal">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content github-modal-content">
+      <button class="modal-close" data-close-modal>
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-header">
+        <i class="fab fa-github"></i>
+        <h3>Commit to GitHub</h3>
+      </div>
+      <p>Directly commit your changes to the repository.</p>
+      <div class="form-group">
+        <label for="githubToken">Personal Access Token</label>
+        <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+        <p class="form-help-text">Your token is stored locally and never sent to any server except GitHub.</p>
+      </div>
+      <div class="form-group">
+        <label for="commitMessage">Commit Message</label>
+        <input type="text" id="commitMessage" value="Update blog posts">
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" data-close-modal>Cancel</button>
+        <button class="btn btn-primary" id="commitToGithubBtn">
+          <i class="fab fa-github"></i> Commit Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quill.js -->
+  <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+  
+  <!-- Editor Script -->
+  <script src="js/blog-editor.js"></script>
+</body>
+</html>
+
