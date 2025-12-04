@@ -9,7 +9,7 @@
       "date": "2024-11-01",
       "tools": ["Illustrator", "Photoshop"],
       "tags": ["Logo Design", "Brand Identity", "Print Design", "Mockups"],
-      "thumbnail": "images/projects/stream-bud/collection-display.svg",
+      "thumbnail": "images/projects/stream-bud/Artboard 6.jpg",
       "images": [
         {
           "src": "images/projects/stream-bud/Artboard 6.jpg",
@@ -218,4 +218,3 @@
     { "id": "illustration", "name": "Illustration", "icon": "fas fa-pencil-alt" }
   ]
 }
-
