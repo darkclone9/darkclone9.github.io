@@ -205,9 +205,9 @@ a {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   margin: 0;
-  padding-right: 70px; /* Space for centered profile */
+  padding-right: 100px; /* More space for centered logo */
 }
 
 .nav-link {
@@ -261,6 +261,20 @@ a {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  pointer-events: auto;
+}
+
+.profile-logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.profile-logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255, 107, 107, 0.5));
 }
 
 .profile-img {
@@ -291,7 +305,7 @@ a {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding-left: 70px; /* Space for centered profile */
+  padding-left: 100px; /* More space for centered logo */
 }
 
 .login-btn {
