@@ -263,6 +263,15 @@ a {
   flex-shrink: 0;
 }
 
+/* Old nav-profile styling for cached HTML */
+.nav-profile {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
 .profile-logo {
   height: 50px;
   width: auto;
