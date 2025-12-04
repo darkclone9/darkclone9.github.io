@@ -721,6 +721,8 @@ a {
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .skill-icons {
@@ -728,6 +730,8 @@ a {
   flex-wrap: wrap;
   gap: var(--spacing-sm);
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .skill-badge {
@@ -1515,6 +1519,7 @@ a {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.6s ease;
+  z-index: 0;
 }
 
 .skill-category:hover::before {
