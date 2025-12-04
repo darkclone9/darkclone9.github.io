@@ -40,3 +40,8 @@ npm-debug.log*
 .augment/
 .cursor/
 .env*.local
+
+# Nested Git repositories and tools
+gary-portfolio-blog/
+mcp-server/
+ai-rules-config/
