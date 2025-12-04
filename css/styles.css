@@ -199,13 +199,15 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-lg);
+  position: relative;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   margin: 0;
+  padding-right: 70px; /* Space for centered profile */
 }
 
 .nav-link {
@@ -258,6 +260,7 @@ a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .profile-img {
@@ -288,6 +291,7 @@ a {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  padding-left: 70px; /* Space for centered profile */
 }
 
 .login-btn {
@@ -2360,7 +2364,8 @@ a {
 /* ============================================
    14. UTILITY CLASSES
    ============================================ */
-.sr-only {
+.sr-only,
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;

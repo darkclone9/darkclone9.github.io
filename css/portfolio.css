@@ -209,6 +209,14 @@
   background: #f8f9fa;
 }
 
+.categories-section-title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-3xl);
+}
+
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

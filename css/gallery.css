@@ -587,6 +587,7 @@
   margin: 0 auto var(--spacing-lg);
 }
 
+.tool-item h3,
 .tool-item h4 {
   font-size: var(--font-size-lg);
   font-weight: 600;
