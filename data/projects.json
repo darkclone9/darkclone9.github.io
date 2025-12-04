@@ -1,0 +1,221 @@
+{
+  "projects": [
+    {
+      "id": "stream-bud",
+      "title": "Stream Bud Brand Identity",
+      "category": "branding",
+      "description": "Complete brand identity system for a streaming-focused brand. Includes logo variations, letterhead, business cards, envelope, mockups, YouTube branding, and advertising materials.",
+      "featured": true,
+      "date": "2024-11-01",
+      "tools": ["Illustrator", "Photoshop"],
+      "tags": ["Logo Design", "Brand Identity", "Print Design", "Mockups"],
+      "thumbnail": "images/projects/stream-bud/collection-display.svg",
+      "images": [
+        {
+          "src": "images/projects/stream-bud/Artboard 6.jpg",
+          "alt": "Stream Bud mockups collection"
+        },
+        {
+          "src": "images/projects/stream-bud/Letter Head.jpg",
+          "alt": "Stream Bud letterhead design"
+        },
+        {
+          "src": "images/projects/stream-bud/Buisness Card.jpg",
+          "alt": "Stream Bud business card"
+        },
+        {
+          "src": "images/projects/stream-bud/Envelope.jpg",
+          "alt": "Stream Bud envelope design"
+        },
+        {
+          "src": "images/projects/stream-bud/Hoodie.jpg",
+          "alt": "Stream Bud hoodie mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Phone Case.jpg",
+          "alt": "Stream Bud phone case mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Laptop.jpg",
+          "alt": "Stream Bud laptop mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Xbox Controller.jpg",
+          "alt": "Stream Bud Xbox controller mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Mouse pad.jpg",
+          "alt": "Stream Bud mousepad mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Website Mockup On Laptop - Stream Bud - Garrison Owens.jpg",
+          "alt": "Stream Bud website mockup"
+        },
+        {
+          "src": "images/projects/stream-bud/Stream Bud - Youtube Page - Garrison Owens.jpg",
+          "alt": "Stream Bud YouTube branding"
+        }
+      ],
+      "details": {
+        "client": "Personal Project",
+        "duration": "4 weeks",
+        "deliverables": ["Logo Suite", "Brand Guidelines", "Stationery", "Mockups", "Advertising Materials"]
+      }
+    },
+    {
+      "id": "holo-design",
+      "title": "Holo Gradient Design",
+      "category": "digital-art",
+      "description": "Abstract holographic gradient design featuring vibrant colors and smooth transitions. Created for modern digital aesthetic applications.",
+      "featured": true,
+      "date": "2024-10-15",
+      "tools": ["Illustrator"],
+      "tags": ["Abstract Art", "Gradient", "Digital Art"],
+      "thumbnail": "images/projects/holo/holo-gradient.jpg",
+      "images": [
+        {
+          "src": "images/projects/holo/holo-gradient.jpg",
+          "alt": "Holographic gradient design"
+        }
+      ],
+      "details": {
+        "client": "Personal Project",
+        "duration": "1 week",
+        "deliverables": ["Digital Artwork", "Print-Ready Files"]
+      }
+    },
+    {
+      "id": "bolis-illustration",
+      "title": "Bolis Vector Illustration",
+      "category": "illustration",
+      "description": "Vector illustration project with multiple iterations showcasing the design evolution process from concept to final artwork.",
+      "featured": false,
+      "date": "2024-10-08",
+      "tools": ["Illustrator"],
+      "tags": ["Vector Art", "Illustration", "Character Design"],
+      "thumbnail": "images/projects/bolis/bolis.svg",
+      "images": [
+        {
+          "src": "images/projects/bolis/bolis.svg",
+          "alt": "Bolis illustration version 1"
+        },
+        {
+          "src": "images/projects/bolis/bolis-v2.svg",
+          "alt": "Bolis illustration version 2"
+        },
+        {
+          "src": "images/projects/bolis/bolis-v3.svg",
+          "alt": "Bolis illustration version 3"
+        }
+      ],
+      "details": {
+        "client": "Academic Project",
+        "duration": "2 weeks",
+        "deliverables": ["Vector Illustrations", "Design Iterations"]
+      }
+    },
+    {
+      "id": "brogue-2025",
+      "title": "Brogue 2025 Art Submission",
+      "category": "digital-art",
+      "description": "Art submission for Brogue 2025 featuring three unique pieces exploring different visual styles and techniques.",
+      "featured": true,
+      "date": "2025-01-01",
+      "tools": ["Photoshop", "Illustrator"],
+      "tags": ["Digital Art", "Competition", "Mixed Media"],
+      "thumbnail": "images/projects/brogue-2025/Final.jpg",
+      "images": [
+        {
+          "src": "images/projects/brogue-2025/Final.jpg",
+          "alt": "Final artwork for Brogue 2025"
+        },
+        {
+          "src": "images/projects/brogue-2025/Bashed.jpg",
+          "alt": "Bashed artwork"
+        },
+        {
+          "src": "images/projects/brogue-2025/Holo_1.jpg",
+          "alt": "Holographic artwork variation"
+        }
+      ],
+      "details": {
+        "client": "Brogue Magazine",
+        "duration": "3 weeks",
+        "deliverables": ["3 Art Pieces", "High-Resolution Prints"]
+      }
+    },
+    {
+      "id": "design-sketches",
+      "title": "90 Design Sketches Collection",
+      "category": "illustration",
+      "description": "A comprehensive collection of 90 design sketches showcasing ideation process, creative exploration, and diverse illustration concepts.",
+      "featured": false,
+      "date": "2024-09-01",
+      "tools": ["Illustrator", "Procreate"],
+      "tags": ["Sketches", "Ideation", "Concept Art"],
+      "thumbnail": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-01.jpg",
+      "images": [
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-01.jpg",
+          "alt": "Design sketch 1"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-02.jpg",
+          "alt": "Design sketch 2"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-03.jpg",
+          "alt": "Design sketch 3"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-04.jpg",
+          "alt": "Design sketch 4"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-05.jpg",
+          "alt": "Design sketch 5"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-06.jpg",
+          "alt": "Design sketch 6"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-07.jpg",
+          "alt": "Design sketch 7"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-08.jpg",
+          "alt": "Design sketch 8"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-09.jpg",
+          "alt": "Design sketch 9"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-10.jpg",
+          "alt": "Design sketch 10"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-11.jpg",
+          "alt": "Design sketch 11"
+        },
+        {
+          "src": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-12.jpg",
+          "alt": "Design sketch 12"
+        }
+      ],
+      "details": {
+        "client": "Academic Project",
+        "duration": "Semester",
+        "deliverables": ["90 Sketches", "Concept Explorations"]
+      }
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All Projects", "icon": "fas fa-th" },
+    { "id": "branding", "name": "Branding", "icon": "fas fa-palette" },
+    { "id": "digital-art", "name": "Digital Art", "icon": "fas fa-paint-brush" },
+    { "id": "illustration", "name": "Illustration", "icon": "fas fa-pencil-alt" }
+  ]
+}
+

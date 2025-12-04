@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Gary Of Cinema</title>
+  <meta name="description" content="Read Gary's blog posts about design, creativity, and project case studies">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blogs.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar blog-nav" role="navigation" aria-label="Blog navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link" aria-label="Go back to home page">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+      <div class="nav-title">
+        <h1>Gary's Blog</h1>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="blog-hero" aria-labelledby="blog-hero-title">
+    <div class="hero-background" aria-hidden="true">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-label">Creative Insights</span>
+        <h1 id="blog-hero-title" class="hero-title">Thoughts & Stories</h1>
+        <p class="hero-subtitle">Exploring design, creativity, and the journey of bringing ideas to life</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="featured-post-section" aria-labelledby="featured-title">
+    <div class="container">
+      <h2 id="featured-title" class="section-label">Featured Post</h2>
+      <article id="featured-post" class="featured-post">
+        <!-- Dynamically loaded -->
+      </article>
+    </div>
+  </section>
+
+  <!-- Blog Categories -->
+  <section class="blog-categories" aria-labelledby="categories-title">
+    <div class="container">
+      <h2 id="categories-title" class="visually-hidden">Blog Categories</h2>
+      <div class="categories-filter" id="category-filters">
+        <!-- Dynamically loaded -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-posts-section" aria-labelledby="posts-title">
+    <div class="container">
+      <h2 id="posts-title" class="section-label">All Posts</h2>
+      <div class="blog-grid" id="blog-posts">
+        <!-- Dynamically loaded -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section" aria-labelledby="newsletter-title">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2 id="newsletter-title">Stay Updated</h2>
+          <p>Get notified when I publish new content about design, tutorials, and creative insights.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="blog-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Gary Of Cinema. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Blog Post Modal -->
+  <div class="blog-modal" id="blog-modal" aria-hidden="true">
+    <div class="modal-overlay" data-close-modal></div>
+    <article class="modal-content" id="modal-content">
+      <button class="modal-close" aria-label="Close modal" data-close-modal>
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body">
+        <!-- Dynamically loaded -->
+      </div>
+    </article>
+  </div>
+
+  <script src="js/blogs.js"></script>
+</body>
+</html>
+

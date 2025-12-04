@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": "welcome-to-my-blog",
+      "title": "Welcome to My Creative Journey",
+      "slug": "welcome-to-my-blog",
+      "excerpt": "Hello and welcome! I'm Gary, and this is where I'll be sharing my thoughts on design, creativity, and the projects I'm working on.",
+      "content": "<p>Hello and welcome to my blog! I'm Gary, a passionate designer and creative professional, and I'm excited to share my journey with you.</p><p>This space will be dedicated to exploring the intersection of art, design, and technology. I'll be sharing insights from my projects, tutorials, behind-the-scenes looks at my creative process, and thoughts on the ever-evolving world of digital design.</p><p>Whether you're a fellow designer, a student, or just someone who appreciates creativity, I hope you'll find something valuable here. Stay tuned for more content coming soon!</p>",
+      "author": "Gary",
+      "date": "2024-12-04",
+      "category": "Personal",
+      "tags": ["Introduction", "Design", "Creative Journey"],
+      "featured": true,
+      "image": "images/projects/holo/holo-gradient.jpg",
+      "readTime": "2 min read"
+    },
+    {
+      "id": "stream-bud-case-study",
+      "title": "Stream Bud: A Complete Brand Identity Case Study",
+      "slug": "stream-bud-case-study",
+      "excerpt": "Dive deep into the creative process behind Stream Bud, a comprehensive brand identity project that includes everything from logo design to merchandise mockups.",
+      "content": "<p>The Stream Bud project was one of my most comprehensive branding endeavors. What started as a simple logo design evolved into a full brand identity system.</p><h3>The Challenge</h3><p>Create a cohesive brand identity for a streaming-focused platform that would appeal to content creators and their audiences.</p><h3>The Solution</h3><p>I developed a complete brand system including:</p><ul><li>Logo variations (1-color, 2-color, 3-color)</li><li>Letterhead and stationery</li><li>Business cards and envelopes</li><li>Merchandise mockups (hoodies, phone cases, controllers)</li><li>YouTube channel branding</li><li>Website design</li></ul><p>The result is a versatile brand that works across all platforms and applications.</p>",
+      "author": "Gary",
+      "date": "2024-11-15",
+      "category": "Case Study",
+      "tags": ["Branding", "Logo Design", "Case Study", "Stream Bud"],
+      "featured": true,
+      "image": "images/projects/stream-bud/Artboard 6.jpg",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "design-process-sketches",
+      "title": "The Power of Sketching: 90 Designs Later",
+      "slug": "design-process-sketches",
+      "excerpt": "Why I believe sketching is still the most powerful tool in a designer's arsenal, even in the age of digital tools.",
+      "content": "<p>In a world dominated by digital tools, there's something magical about putting pen to paper. My 90 sketches project taught me invaluable lessons about the design process.</p><h3>Why Sketch?</h3><p>Sketching allows for rapid ideation without the constraints of software. It's faster, more intuitive, and often leads to more creative solutions.</p><h3>What I Learned</h3><p>After completing 90 sketches, I discovered that the best ideas often come after the first 20-30 attempts. Persistence and volume lead to innovation.</p><p>Don't be afraid to fill pages with 'bad' ideas – they often lead to the best ones.</p>",
+      "author": "Gary",
+      "date": "2024-09-20",
+      "category": "Tutorial",
+      "tags": ["Sketching", "Design Process", "Tips"],
+      "featured": false,
+      "image": "images/projects/design-sketches/Design 2 90 Sketchs Lighter file-01.jpg",
+      "readTime": "4 min read"
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All Posts", "count": 3 },
+    { "id": "personal", "name": "Personal", "count": 1 },
+    { "id": "case-study", "name": "Case Study", "count": 1 },
+    { "id": "tutorial", "name": "Tutorial", "count": 1 }
+  ]
+}
+
