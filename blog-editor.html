@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Post Editor - Gary Of Cinema</title>
   <meta name="description" content="Create and manage blog posts for Gary Of Cinema">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Quill Editor CSS -->
   <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/blog-editor.css">
 </head>
@@ -75,128 +75,163 @@
       <!-- Editor Panel -->
       <section class="editor-panel">
         <form id="postForm" class="post-form">
-          <!-- Title -->
-          <div class="form-group">
-            <label for="postTitle">Post Title <span class="required">*</span></label>
-            <input type="text" id="postTitle" name="title" placeholder="Enter post title..." required>
-          </div>
+          <!-- Basic Info Section -->
+          <div class="form-section">
+            <div class="section-header">
+              <i class="fas fa-pen-fancy"></i>
+              <h3>Basic Information</h3>
+            </div>
 
-          <!-- Slug -->
-          <div class="form-row">
+            <!-- Title -->
             <div class="form-group">
-              <label for="postSlug">URL Slug <span class="required">*</span></label>
-              <input type="text" id="postSlug" name="slug" placeholder="post-url-slug">
+              <label for="postTitle">Post Title <span class="required">*</span></label>
+              <input type="text" id="postTitle" name="title" placeholder="Enter an engaging title for your post..." required>
             </div>
-            <div class="form-group">
-              <label for="postDate">Date <span class="required">*</span></label>
-              <input type="date" id="postDate" name="date" required>
-            </div>
-          </div>
 
-          <!-- Excerpt -->
-          <div class="form-group">
-            <label for="postExcerpt">Excerpt <span class="required">*</span></label>
-            <textarea id="postExcerpt" name="excerpt" rows="3" placeholder="Brief description of the post..." required></textarea>
-          </div>
-
-          <!-- Content Editor -->
-          <div class="form-group">
-            <label>Content <span class="required">*</span></label>
-            <div id="quillToolbar">
-              <span class="ql-formats">
-                <select class="ql-header">
-                  <option value="1">Heading 1</option>
-                  <option value="2">Heading 2</option>
-                  <option value="3">Heading 3</option>
-                  <option selected>Normal</option>
-                </select>
-              </span>
-              <span class="ql-formats">
-                <button class="ql-bold"></button>
-                <button class="ql-italic"></button>
-                <button class="ql-underline"></button>
-                <button class="ql-strike"></button>
-              </span>
-              <span class="ql-formats">
-                <button class="ql-blockquote"></button>
-                <button class="ql-code-block"></button>
-              </span>
-              <span class="ql-formats">
-                <button class="ql-list" value="ordered"></button>
-                <button class="ql-list" value="bullet"></button>
-              </span>
-              <span class="ql-formats">
-                <button class="ql-link"></button>
-                <button class="ql-image"></button>
-                <button class="ql-video"></button>
-              </span>
-              <span class="ql-formats">
-                <button class="ql-clean"></button>
-              </span>
-            </div>
-            <div id="quillEditor"></div>
-          </div>
-
-          <!-- Featured Image -->
-          <div class="form-group">
-            <label>Featured Image</label>
-            <div class="image-upload-area" id="imageUploadArea">
-              <div class="upload-placeholder" id="uploadPlaceholder">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Drag & drop an image or click to browse</p>
-                <span>Supports: JPG, PNG, GIF, WebP</span>
+            <!-- Slug & Date -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="postSlug">URL Slug <span class="required">*</span></label>
+                <input type="text" id="postSlug" name="slug" placeholder="auto-generated-from-title">
+                <span class="form-hint">Auto-generated from title</span>
               </div>
-              <img id="imagePreview" class="image-preview" src="" alt="Preview" style="display: none;">
-              <button type="button" class="btn btn-remove" id="removeImageBtn" style="display: none;">
-                <i class="fas fa-times"></i>
-              </button>
+              <div class="form-group">
+                <label for="postDate">Publish Date <span class="required">*</span></label>
+                <input type="date" id="postDate" name="date" required>
+              </div>
             </div>
-            <input type="file" id="featuredImage" accept="image/*" hidden>
-            <div class="form-help">
-              <input type="text" id="imageUrl" placeholder="Or enter image URL...">
+
+            <!-- Excerpt -->
+            <div class="form-group">
+              <label for="postExcerpt">Excerpt <span class="required">*</span></label>
+              <textarea id="postExcerpt" name="excerpt" rows="3" placeholder="Write a compelling summary that will appear in post previews..." required></textarea>
             </div>
           </div>
 
-          <!-- Metadata Row -->
-          <div class="form-row form-row-3">
-            <div class="form-group">
-              <label for="postAuthor">Author</label>
-              <input type="text" id="postAuthor" name="author" value="Gary" placeholder="Author name">
+          <!-- Content Section -->
+          <div class="form-section">
+            <div class="section-header">
+              <i class="fas fa-file-alt"></i>
+              <h3>Post Content</h3>
             </div>
+
             <div class="form-group">
-              <label for="postCategory">Category <span class="required">*</span></label>
-              <select id="postCategory" name="category" required>
-                <option value="">Select category...</option>
-                <option value="Design">Design</option>
-                <option value="Tutorial">Tutorial</option>
-                <option value="Behind the Scenes">Behind the Scenes</option>
-                <option value="Inspiration">Inspiration</option>
-                <option value="News">News</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="postReadTime">Read Time</label>
-              <input type="text" id="postReadTime" name="readTime" value="5 min read" placeholder="5 min read">
+              <label>Content <span class="required">*</span></label>
+              <div id="quillToolbar">
+                <span class="ql-formats">
+                  <select class="ql-header">
+                    <option value="1">Heading 1</option>
+                    <option value="2">Heading 2</option>
+                    <option value="3">Heading 3</option>
+                    <option selected>Normal</option>
+                  </select>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-bold"></button>
+                  <button class="ql-italic"></button>
+                  <button class="ql-underline"></button>
+                  <button class="ql-strike"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-blockquote"></button>
+                  <button class="ql-code-block"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-list" value="ordered"></button>
+                  <button class="ql-list" value="bullet"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-link"></button>
+                  <button class="ql-image"></button>
+                  <button class="ql-video"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-clean"></button>
+                </span>
+              </div>
+              <div id="quillEditor"></div>
             </div>
           </div>
 
-          <!-- Tags -->
-          <div class="form-group">
-            <label for="postTags">Tags</label>
-            <div class="tags-input-container">
-              <div class="tags-list" id="tagsList"></div>
-              <input type="text" id="tagsInput" placeholder="Type and press Enter to add tags...">
+          <!-- Media Section -->
+          <div class="form-section">
+            <div class="section-header">
+              <i class="fas fa-image"></i>
+              <h3>Featured Image</h3>
+            </div>
+
+            <div class="form-group">
+              <div class="image-upload-area" id="imageUploadArea">
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                  <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                  </div>
+                  <p>Drag & drop an image or click to browse</p>
+                  <span>Supports: JPG, PNG, GIF, WebP (Max 5MB)</span>
+                </div>
+                <img id="imagePreview" class="image-preview" src="" alt="Preview" style="display: none;">
+                <button type="button" class="btn btn-remove" id="removeImageBtn" style="display: none;">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <input type="file" id="featuredImage" accept="image/*" hidden>
+              <div class="image-url-input">
+                <span class="divider-text">or</span>
+                <input type="text" id="imageUrl" placeholder="Paste image URL here...">
+              </div>
             </div>
           </div>
 
-          <!-- Featured Toggle -->
-          <div class="form-group form-toggle">
-            <label class="toggle-label">
-              <input type="checkbox" id="postFeatured" name="featured">
-              <span class="toggle-switch"></span>
-              <span class="toggle-text">Featured Post</span>
-            </label>
-            <p class="form-help-text">Featured posts appear prominently on the blog page</p>
+          <!-- Metadata Section -->
+          <div class="form-section">
+            <div class="section-header">
+              <i class="fas fa-cog"></i>
+              <h3>Post Settings</h3>
+            </div>
+
+            <div class="form-row form-row-3">
+              <div class="form-group">
+                <label for="postAuthor">Author</label>
+                <input type="text" id="postAuthor" name="author" value="Gary" placeholder="Author name">
+              </div>
+              <div class="form-group">
+                <label for="postCategory">Category <span class="required">*</span></label>
+                <select id="postCategory" name="category" required>
+                  <option value="">Select category...</option>
+                  <option value="Design">Design</option>
+                  <option value="Tutorial">Tutorial</option>
+                  <option value="Behind the Scenes">Behind the Scenes</option>
+                  <option value="Case Study">Case Study</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Inspiration">Inspiration</option>
+                  <option value="News">News</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="postReadTime">Read Time</label>
+                <input type="text" id="postReadTime" name="readTime" value="5 min read" placeholder="e.g., 5 min read">
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="form-group">
+              <label for="postTags">Tags</label>
+              <div class="tags-input-container">
+                <div class="tags-list" id="tagsList"></div>
+                <input type="text" id="tagsInput" placeholder="Type and press Enter to add tags...">
+              </div>
+              <span class="form-hint">Add relevant tags to help categorize your post</span>
+            </div>
+
+            <!-- Featured Toggle -->
+            <div class="form-group form-toggle">
+              <label class="toggle-label">
+                <input type="checkbox" id="postFeatured" name="featured">
+                <span class="toggle-switch"></span>
+                <span class="toggle-text">Featured Post</span>
+              </label>
+              <p class="form-help-text">Featured posts appear prominently on the blog page</p>
+            </div>
           </div>
 
           <!-- Hidden ID field for editing -->
@@ -271,9 +306,8 @@
 
   <!-- Quill.js -->
   <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
-  
+
   <!-- Editor Script -->
   <script src="js/blog-editor.js"></script>
 </body>
 </html>
-

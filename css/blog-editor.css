@@ -300,36 +300,380 @@ body {
   color: #ef4444;
 }
 
-/* Image Upload Area */
-.image-upload-area {
-  position: relative;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+  font-size: 0.65rem;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+}
+
+.featured-badge i {
+  font-size: 0.5rem;
+}
+
+.sidebar-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Editor Panel */
+.editor-panel {
+  padding: 2rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(15, 15, 25, 0.5) 0%, transparent 100%);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.75rem;
-  padding: 2rem;
-  text-align: center;
-  cursor: pointer;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
   transition: all 0.3s ease;
-  min-height: 180px;
+}
+
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="password"]:hover,
+select:hover,
+textarea:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(255,255,255,0.5)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  padding-right: 3rem;
+}
+
+select option {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.form-help {
+  margin-top: 0.75rem;
+}
+
+.form-help input {
+  width: 100%;
+}
+
+.form-help-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.5rem;
+}
+
+/* Quill Editor Styles */
+.ql-toolbar.ql-snow {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem 0.75rem 0 0;
+  padding: 0.75rem !important;
+}
+
+.ql-container.ql-snow {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: none !important;
+  border-radius: 0 0 0.75rem 0.75rem;
+  min-height: 350px;
+  font-family: inherit;
+}
+
+.ql-editor {
+  min-height: 350px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #fff;
+  padding: 1.25rem;
+}
+
+.ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.35);
+  font-style: normal;
+}
+
+.ql-snow .ql-stroke {
+  stroke: rgba(255, 255, 255, 0.6);
+}
+
+.ql-snow .ql-fill {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.ql-snow .ql-picker {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ql-snow .ql-picker-label {
+  border-color: transparent !important;
+}
+
+.ql-snow .ql-picker-options {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.ql-snow .ql-picker-item {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.ql-snow .ql-picker-item:hover {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.ql-snow .ql-picker-item.ql-selected {
+  color: #10b981;
+}
+
+.ql-snow button:hover .ql-stroke,
+.ql-snow .ql-picker-label:hover .ql-stroke {
+  stroke: #10b981;
+}
+
+.ql-snow button:hover .ql-fill,
+.ql-snow .ql-picker-label:hover .ql-fill {
+  fill: #10b981;
+}
+
+.ql-snow button.ql-active .ql-stroke {
+  stroke: #10b981;
+}
+
+.ql-snow button.ql-active .ql-fill {
+  fill: #10b981;
+}
+
+.ql-snow .ql-picker-label:hover {
+  color: #10b981;
+}
+
+.ql-snow .ql-tooltip {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ql-snow .ql-tooltip input[type=text] {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+.ql-snow .ql-tooltip a {
+  color: #10b981;
+}
+
+/* Form Sections */
+.form-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Section Headers */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.section-header i {
+  color: #10b981;
+  font-size: 1rem;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 0.5rem;
+}
+
+/* Form Hints */
+.form-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* Image URL Input */
+.image-url-input {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image-url-input .divider-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.image-url-input input {
+  flex: 1;
+}
+
+/* Image Upload Area */
+.image-upload-area {
+  position: relative;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .image-upload-area:hover {
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.03) 100%);
 }
 
 .image-upload-area.dragging {
   border-color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+  transform: scale(1.01);
 }
 
 .upload-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+
+.upload-placeholder .upload-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.upload-placeholder .upload-icon i {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .upload-placeholder i {
@@ -338,20 +682,22 @@ body {
 }
 
 .upload-placeholder p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .upload-placeholder span {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .image-preview {
   max-width: 100%;
-  max-height: 300px;
-  border-radius: 0.5rem;
+  max-height: 350px;
+  border-radius: 0.75rem;
   object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Tags Input */
