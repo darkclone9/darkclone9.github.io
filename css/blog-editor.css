@@ -373,14 +373,14 @@ input[type="date"],
 input[type="password"],
 select,
 textarea {
-  padding: 0.9rem 1.1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  color: #fff;
-  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 15, 25, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: #fff !important;
+  font-size: 0.9rem;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 input[type="text"]:hover,
@@ -388,8 +388,8 @@ input[type="date"]:hover,
 input[type="password"]:hover,
 select:hover,
 textarea:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(15, 15, 25, 0.9) !important;
 }
 
 input[type="text"]:focus,
@@ -399,13 +399,21 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: #10b981;
-  background: rgba(16, 185, 129, 0.05);
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  background: rgba(15, 15, 25, 0.95) !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.15);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(15, 15, 25, 0.9) inset !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 select {
@@ -446,31 +454,31 @@ textarea {
 
 /* Quill Editor Styles */
 .ql-toolbar.ql-snow {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 0.75rem 0.75rem 0 0;
+  background: rgba(15, 15, 25, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.75rem !important;
 }
 
 .ql-container.ql-snow {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(15, 15, 25, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-top: none !important;
-  border-radius: 0 0 0.75rem 0.75rem;
-  min-height: 350px;
+  border-radius: 0 0 0.5rem 0.5rem;
+  min-height: 300px;
   font-family: inherit;
 }
 
 .ql-editor {
-  min-height: 350px;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #fff;
-  padding: 1.25rem;
+  min-height: 300px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #fff !important;
+  padding: 1rem;
 }
 
 .ql-editor.ql-blank::before {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.35) !important;
   font-style: normal;
 }
 
@@ -555,17 +563,15 @@ textarea {
 
 /* Form Sections */
 .form-section {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 1rem;
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.form-section:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Section Headers */
@@ -573,27 +579,20 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5rem;
 }
 
 .section-header h3 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .section-header i {
   color: #10b981;
-  font-size: 1rem;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(16, 185, 129, 0.1);
-  border-radius: 0.5rem;
+  font-size: 0.9rem;
 }
 
 /* Form Hints */
@@ -626,78 +625,71 @@ textarea {
 /* Image Upload Area */
 .image-upload-area {
   position: relative;
-  border: 2px dashed rgba(255, 255, 255, 0.15);
-  border-radius: 1rem;
-  padding: 3rem 2rem;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 2rem;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-height: 220px;
+  transition: all 0.2s ease;
+  min-height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  background: rgba(15, 15, 25, 0.5);
 }
 
 .image-upload-area:hover {
   border-color: rgba(16, 185, 129, 0.5);
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.03) 100%);
+  background: rgba(16, 185, 129, 0.05);
 }
 
 .image-upload-area.dragging {
   border-color: #10b981;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
-  transform: scale(1.01);
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .upload-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .upload-placeholder .upload-icon {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%);
+  background: rgba(16, 185, 129, 0.1);
   border-radius: 50%;
-  margin-bottom: 0.5rem;
 }
 
 .upload-placeholder .upload-icon i {
-  font-size: 2rem;
-  background: linear-gradient(135deg, #10b981, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1.75rem;
+  color: #10b981;
 }
 
 .upload-placeholder i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: rgba(255, 255, 255, 0.3);
 }
 
 .upload-placeholder p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
 }
 
 .upload-placeholder span {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .image-preview {
   max-width: 100%;
-  max-height: 350px;
-  border-radius: 0.75rem;
+  max-height: 300px;
+  border-radius: 0.5rem;
   object-fit: contain;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Tags Input */
