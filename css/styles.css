@@ -207,7 +207,7 @@ a {
   list-style: none;
   gap: var(--spacing-md);
   margin: 0;
-  padding-right: 100px; /* More space for centered logo */
+  padding: 0;
 }
 
 .nav-link {
@@ -255,17 +255,16 @@ a {
   border-radius: 1px;
 }
 
-/* Navigation Profile */
-.nav-profile {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  pointer-events: auto;
+/* Navigation Logo */
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .profile-logo {
-  height: 55px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   cursor: pointer;
@@ -305,7 +304,6 @@ a {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding-left: 100px; /* More space for centered logo */
 }
 
 .login-btn {
