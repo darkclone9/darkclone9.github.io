@@ -11,6 +11,10 @@ class BlogEditor {
     this.tags = [];
     this.quill = null;
     this.featuredImageData = null;
+    this.autosaveInterval = null;
+    this.AUTOSAVE_KEY = 'blog-editor-draft';
+    this.AUTOSAVE_INTERVAL = 30000; // 30 seconds
+    this.DRAFT_EXPIRY_DAYS = 7;
 
     this.init();
   }
@@ -21,6 +25,8 @@ class BlogEditor {
     this.renderPostList();
     this.setupEventListeners();
     this.setDefaultDate();
+    this.checkForDraft();
+    this.startAutosave();
   }
 
   async loadBlogData() {
@@ -252,6 +258,9 @@ class BlogEditor {
     this.renderPostList();
     this.showToast('Post saved successfully!', 'success');
 
+    // Clear the autosaved draft since we just saved
+    this.clearDraft();
+
     // Prompt to download
     this.promptDownload();
   }
@@ -347,6 +356,401 @@ class BlogEditor {
     `;
 
     this.openModal('previewModal');
+  }
+
+  // Image Upload Methods
+  handleImageUpload(file) {
+    console.log('handleImageUpload called with file:', file);
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      this.showToast('Please upload an image file', 'error');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      this.showToast('Image must be less than 5MB', 'error');
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      console.log('FileReader onload - image loaded successfully');
+      this.featuredImageData = e.target.result;
+      this.showImagePreview(e.target.result);
+      this.showToast('Image uploaded successfully!', 'success');
+    };
+
+    reader.onerror = (e) => {
+      console.error('FileReader error:', e);
+      this.showToast('Error reading image file', 'error');
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  showImagePreview(imageUrl) {
+    console.log('showImagePreview called with URL:', imageUrl?.substring(0, 50) + '...');
+
+    const uploadArea = document.getElementById('imageUploadArea');
+    const uploadContent = uploadArea.querySelector('.upload-content');
+    const previewContainer = uploadArea.querySelector('.image-preview') || document.createElement('div');
+
+    // Create preview container if it doesn't exist
+    if (!previewContainer.classList.contains('image-preview')) {
+      previewContainer.className = 'image-preview';
+      uploadArea.appendChild(previewContainer);
+    }
+
+    // Hide upload content, show preview
+    if (uploadContent) {
+      uploadContent.style.display = 'none';
+    }
+
+    previewContainer.innerHTML = `
+      <img src="${imageUrl}" alt="Featured image preview" style="max-width: 100%; max-height: 200px; border-radius: 8px; object-fit: cover;">
+      <button type="button" id="removeImageBtn" class="remove-image-btn" style="
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(239, 68, 68, 0.9);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <i class="fas fa-times"></i>
+      </button>
+    `;
+    previewContainer.style.display = 'block';
+    previewContainer.style.position = 'relative';
+
+    // Re-attach remove button listener
+    const removeBtn = previewContainer.querySelector('#removeImageBtn');
+    if (removeBtn) {
+      removeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.clearImagePreview();
+      });
+    }
+  }
+
+  clearImagePreview() {
+    console.log('clearImagePreview called');
+
+    const uploadArea = document.getElementById('imageUploadArea');
+    const uploadContent = uploadArea.querySelector('.upload-content');
+    const previewContainer = uploadArea.querySelector('.image-preview');
+
+    // Show upload content, hide preview
+    if (uploadContent) {
+      uploadContent.style.display = 'flex';
+    }
+
+    if (previewContainer) {
+      previewContainer.style.display = 'none';
+      previewContainer.innerHTML = '';
+    }
+
+    // Clear data
+    this.featuredImageData = null;
+    document.getElementById('imageUrl').value = '';
+    document.getElementById('featuredImage').value = '';
+  }
+
+  // Autosave Methods
+  startAutosave() {
+    console.log('Starting autosave interval...');
+
+    // Clear any existing interval
+    if (this.autosaveInterval) {
+      clearInterval(this.autosaveInterval);
+    }
+
+    // Start autosave interval
+    this.autosaveInterval = setInterval(() => {
+      this.autosaveDraft();
+    }, this.AUTOSAVE_INTERVAL);
+
+    // Also save on form changes
+    const form = document.getElementById('postForm');
+    if (form) {
+      form.addEventListener('input', () => {
+        // Debounce autosave on input
+        clearTimeout(this.autosaveDebounce);
+        this.autosaveDebounce = setTimeout(() => {
+          this.autosaveDraft();
+        }, 5000); // 5 second debounce
+      });
+    }
+  }
+
+  autosaveDraft() {
+    // Get current form data
+    const draftData = this.getCurrentFormData();
+
+    // Only save if there's meaningful content
+    if (!draftData.title && !draftData.content) {
+      return;
+    }
+
+    try {
+      const draft = {
+        data: draftData,
+        savedAt: new Date().toISOString(),
+        postId: this.currentPostId
+      };
+
+      localStorage.setItem(this.AUTOSAVE_KEY, JSON.stringify(draft));
+
+      // Show autosave indicator
+      this.showAutosaveIndicator();
+      console.log('Draft autosaved at', new Date().toLocaleTimeString());
+    } catch (error) {
+      console.error('Autosave error:', error);
+      // Handle localStorage quota exceeded
+      if (error.name === 'QuotaExceededError') {
+        this.showToast('Storage full - clearing old drafts', 'warning');
+        this.clearOldDrafts();
+      }
+    }
+  }
+
+  getCurrentFormData() {
+    return {
+      title: document.getElementById('postTitle')?.value || '',
+      slug: document.getElementById('postSlug')?.value || '',
+      excerpt: document.getElementById('postExcerpt')?.value || '',
+      content: this.quill?.root?.innerHTML || '',
+      author: document.getElementById('postAuthor')?.value || '',
+      date: document.getElementById('postDate')?.value || '',
+      category: document.getElementById('postCategory')?.value || '',
+      readTime: document.getElementById('postReadTime')?.value || '',
+      featured: document.getElementById('postFeatured')?.checked || false,
+      imageUrl: document.getElementById('imageUrl')?.value || '',
+      featuredImageData: this.featuredImageData,
+      tags: this.tags || []
+    };
+  }
+
+  showAutosaveIndicator() {
+    // Remove existing indicator if any
+    let indicator = document.querySelector('.autosave-indicator');
+    if (!indicator) {
+      indicator = document.createElement('div');
+      indicator.className = 'autosave-indicator';
+      indicator.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(16, 185, 129, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 1000;
+        animation: fadeInOut 2s ease-in-out forwards;
+      `;
+      document.body.appendChild(indicator);
+    }
+
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    indicator.innerHTML = `<i class="fas fa-save"></i> Draft saved at ${time}`;
+
+    // Add animation style if not exists
+    if (!document.querySelector('#autosave-animation')) {
+      const style = document.createElement('style');
+      style.id = 'autosave-animation';
+      style.textContent = `
+        @keyframes fadeInOut {
+          0% { opacity: 0; transform: translateY(10px); }
+          15% { opacity: 1; transform: translateY(0); }
+          85% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-10px); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Remove after animation
+    setTimeout(() => {
+      indicator.remove();
+    }, 2000);
+  }
+
+  checkForDraft() {
+    try {
+      const draftJson = localStorage.getItem(this.AUTOSAVE_KEY);
+      if (!draftJson) return;
+
+      const draft = JSON.parse(draftJson);
+
+      // Check if draft is expired (older than 7 days)
+      const savedDate = new Date(draft.savedAt);
+      const expiryDate = new Date();
+      expiryDate.setDate(expiryDate.getDate() - this.DRAFT_EXPIRY_DAYS);
+
+      if (savedDate < expiryDate) {
+        console.log('Draft expired, removing...');
+        localStorage.removeItem(this.AUTOSAVE_KEY);
+        return;
+      }
+
+      // Format time for display
+      const timeAgo = this.getTimeAgo(savedDate);
+
+      // Show restore prompt
+      this.showDraftRestorePrompt(draft, timeAgo);
+    } catch (error) {
+      console.error('Error checking for draft:', error);
+      localStorage.removeItem(this.AUTOSAVE_KEY);
+    }
+  }
+
+  getTimeAgo(date) {
+    const seconds = Math.floor((new Date() - date) / 1000);
+
+    if (seconds < 60) return 'just now';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+    return `${Math.floor(seconds / 86400)} days ago`;
+  }
+
+  showDraftRestorePrompt(draft, timeAgo) {
+    // Create modal for draft restore
+    const modal = document.createElement('div');
+    modal.className = 'draft-restore-modal';
+    modal.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    `;
+
+    modal.innerHTML = `
+      <div style="
+        background: #1a1a2e;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 400px;
+        text-align: center;
+      ">
+        <i class="fas fa-file-alt" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+        <h3 style="color: white; margin-bottom: 0.5rem;">Unsaved Draft Found</h3>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem;">
+          You have an unsaved draft from ${timeAgo}.<br>
+          ${draft.data.title ? `Title: "${draft.data.title}"` : 'Untitled post'}
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button id="restoreDraftBtn" style="
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+          ">Restore Draft</button>
+          <button id="discardDraftBtn" style="
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+          ">Discard</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Event listeners
+    modal.querySelector('#restoreDraftBtn').addEventListener('click', () => {
+      this.restoreDraft(draft);
+      modal.remove();
+    });
+
+    modal.querySelector('#discardDraftBtn').addEventListener('click', () => {
+      localStorage.removeItem(this.AUTOSAVE_KEY);
+      modal.remove();
+      this.showToast('Draft discarded', 'info');
+    });
+  }
+
+  restoreDraft(draft) {
+    const data = draft.data;
+
+    // Restore form fields
+    if (data.title) document.getElementById('postTitle').value = data.title;
+    if (data.slug) document.getElementById('postSlug').value = data.slug;
+    if (data.excerpt) document.getElementById('postExcerpt').value = data.excerpt;
+    if (data.content) this.quill.root.innerHTML = data.content;
+    if (data.author) document.getElementById('postAuthor').value = data.author;
+    if (data.date) document.getElementById('postDate').value = data.date;
+    if (data.category) document.getElementById('postCategory').value = data.category;
+    if (data.readTime) document.getElementById('postReadTime').value = data.readTime;
+    if (data.featured) document.getElementById('postFeatured').checked = data.featured;
+
+    // Restore image
+    if (data.imageUrl) {
+      document.getElementById('imageUrl').value = data.imageUrl;
+      this.showImagePreview(data.imageUrl);
+    } else if (data.featuredImageData) {
+      this.featuredImageData = data.featuredImageData;
+      this.showImagePreview(data.featuredImageData);
+    }
+
+    // Restore tags
+    if (data.tags && data.tags.length > 0) {
+      this.tags = data.tags;
+      this.renderTags();
+    }
+
+    // Restore post ID if editing existing post
+    if (draft.postId) {
+      this.currentPostId = draft.postId;
+    }
+
+    this.showToast('Draft restored successfully!', 'success');
+  }
+
+  clearDraft() {
+    localStorage.removeItem(this.AUTOSAVE_KEY);
+    console.log('Draft cleared');
+  }
+
+  clearOldDrafts() {
+    // Clear the main draft
+    localStorage.removeItem(this.AUTOSAVE_KEY);
+
+    // Clear any other blog-editor related items if storage is full
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('blog-editor-')) {
+        keysToRemove.push(key);
+      }
+    }
+    keysToRemove.forEach(key => localStorage.removeItem(key));
   }
 
   // JSON Export/Import
@@ -599,11 +1003,14 @@ class BlogEditor {
       }
     });
 
-    // Remove Image Button
-    document.getElementById('removeImageBtn').addEventListener('click', (e) => {
-      e.stopPropagation();
-      this.clearImagePreview();
-    });
+    // Remove Image Button (may not exist on initial load)
+    const removeImageBtn = document.getElementById('removeImageBtn');
+    if (removeImageBtn) {
+      removeImageBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.clearImagePreview();
+      });
+    }
 
     // Image URL Input
     document.getElementById('imageUrl').addEventListener('change', (e) => {
