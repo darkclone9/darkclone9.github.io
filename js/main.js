@@ -186,11 +186,18 @@
     function initializeNavigation() {
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links (only for anchor links starting with #)
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                // Only handle anchor links (starting with #), let other links navigate normally
+                if (!href || !href.startsWith('#')) {
+                    return; // Allow normal navigation for external/page links
+                }
+
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
+                const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
