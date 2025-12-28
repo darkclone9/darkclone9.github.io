@@ -313,6 +313,7 @@ a {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  padding-right: 70px; /* Space for the logo on the right */
 }
 
 .login-btn {
@@ -2849,6 +2850,89 @@ a {
   font-family: 'Inter';
   font-display: swap;
   src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(180deg,
+    rgba(74, 144, 226, 0.05) 0%,
+    rgba(139, 92, 246, 0.05) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-coral);
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px var(--shadow-dark);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-quote {
+  margin-bottom: var(--spacing-lg);
+}
+
+.testimonial-quote i {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-coral);
+  margin-bottom: var(--spacing-md);
+  display: block;
+  opacity: 0.5;
+}
+
+.testimonial-quote p {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author-info h4 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.author-info p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
 }
 
 /* ============================================
