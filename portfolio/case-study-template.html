@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Name] - Case Study | Gary Fletcher</title>
+  <meta name="description" content="[Brief description of the project and its impact - 1-2 sentences]">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css?v=4">
+  <link rel="stylesheet" href="../css/portfolio.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Case Study Specific Styles */
+    .case-study-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 6rem 0 4rem;
+      text-align: center;
+      color: white;
+    }
+
+    .case-study-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-hero .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .meta-item .label {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    .meta-item .value {
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    .case-study-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .case-study-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #FF6B6B;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .case-study-section p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.5rem;
+    }
+
+    .case-study-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .case-study-section ul li {
+      padding-left: 2rem;
+      position: relative;
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .case-study-section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #FF6B6B;
+      font-weight: bold;
+    }
+
+    .image-showcase {
+      margin: 3rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-showcase img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .impact-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4A90E2, #FF6B6B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .testimonial-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #FF6B6B;
+      padding: 2rem;
+      margin: 3rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .testimonial-box p {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .testimonial-author strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    .next-project {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(255, 107, 107, 0.1));
+    }
+
+    .next-project h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4A90E2, #FF6B6B);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .case-study-hero h1 {
+        font-size: 2rem;
+      }
+
+      .case-study-hero .subtitle {
+        font-size: 1rem;
+      }
+
+      .case-study-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .metric-number {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar portfolio-nav" role="navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../portfolio.html" class="brand-link">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="case-study-hero">
+    <div class="container">
+      <h1>[Project Name]</h1>
+      <p class="subtitle">[One-sentence description of what the project is and what impact it had]</p>
+
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="label">Role</span>
+          <span class="value">[Your Role]</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Timeline</span>
+          <span class="value">[Duration]</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Tools</span>
+          <span class="value">[Tools Used]</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Category</span>
+          <span class="value">[Category]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="case-study-content">
+
+    <!-- Overview -->
+    <section class="case-study-section">
+      <span class="section-label">Overview</span>
+      <h2>Project Overview</h2>
+      <p>
+        [2-3 sentences providing context about the project. What was it? Who was it for?
+        Why was it important?]
+      </p>
+      <p>
+        Example: "This project involved creating a complete brand identity for a local
+        nonprofit organization that needed to modernize their visual presence to attract
+        younger donors and increase online engagement."
+      </p>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="case-study-section">
+      <span class="section-label">The Problem</span>
+      <h2>The Challenge</h2>
+      <p>
+        [Describe the specific problem or challenge. What were the client's pain points?
+        What goals did they want to achieve?]
+      </p>
+      <p>
+        Example: "The organization's existing brand felt dated and didn't resonate with their
+        target demographic. Their social media engagement was low (averaging 50 interactions
+        per post), and they were struggling to communicate their mission effectively to
+        potential donors."
+      </p>
+    </section>
+
+    <!-- Your Role -->
+    <section class="case-study-section">
+      <span class="section-label">My Role</span>
+      <h2>What I Did</h2>
+      <p>
+        [Explain your specific responsibilities. This is especially important for group
+        projects where you need to clarify your individual contributions.]
+      </p>
+      <ul>
+        <li>[Responsibility 1 - be specific]</li>
+        <li>[Responsibility 2 - be specific]</li>
+        <li>[Responsibility 3 - be specific]</li>
+      </ul>
+      <p>
+        Example: "I led the complete brand redesign, including logo design, color palette
+        development, typography system, and social media template creation. I also conducted
+        user research through surveys and interviews to understand donor preferences."
+      </p>
+    </section>
+
+    <!-- The Process -->
+    <section class="case-study-section">
+      <span class="section-label">The Process</span>
+      <h2>My Approach</h2>
+      <p>
+        [Show your thinking process. This is what employers really want to see - HOW you
+        solve problems, not just the final result.]
+      </p>
+
+      <h3 style="color: white; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem;">
+        1. Research & Discovery
+      </h3>
+      <p>
+        [What research did you conduct? Competitive analysis? User surveys? Mood boards?]
+      </p>
+      <p>
+        Example: "I started by analyzing competitor brands in the nonprofit space and
+        surveying current donors about their perceptions. I created mood boards exploring
+        different visual directions that could appeal to younger demographics while
+        maintaining trust and credibility."
+      </p>
+
+      <div class="image-showcase">
+        <!-- Add your research images here -->
+        <img src="https://via.placeholder.com/900x500/667eea/ffffff?text=Research+%26+Mood+Boards"
+             alt="Research and mood boards">
+      </div>
+
+      <h3 style="color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem;">
+        2. Ideation & Sketching
+      </h3>
+      <p>
+        [Show your sketches, iterations, explorations. This demonstrates creative thinking.]
+      </p>
+      <p>
+        Example: "I explored 15+ logo concepts, ranging from literal interpretations of the
+        organization's mission to more abstract symbolic approaches. After presenting 3
+        refined directions, we selected the concept that best balanced modern aesthetics
+        with emotional resonance."
+      </p>
+
+      <div class="image-grid">
+        <!-- Add your sketch/iteration images here -->
+        <img src="https://via.placeholder.com/400x300/4A90E2/ffffff?text=Sketches"
+             alt="Initial sketches">
+        <img src="https://via.placeholder.com/400x300/FF6B6B/ffffff?text=Iterations"
+             alt="Design iterations">
+      </div>
+
+      <h3 style="color: white; font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1rem;">
+        3. Refinement & Testing
+      </h3>
+      <p>
+        [How did you refine your work? Did you test with users? Get feedback?]
+      </p>
+      <p>
+        Example: "I created multiple color palette variations and tested them with the
+        target demographic through A/B testing on social media. The warmer, more vibrant
+        palette performed 40% better in engagement tests, so we moved forward with that
+        direction."
+      </p>
+    </section>
+
+    <!-- The Solution -->
+    <section class="case-study-section">
+      <span class="section-label">The Solution</span>
+      <h2>Final Design</h2>
+      <p>
+        [Present your final work. Use high-quality images. Explain your design decisions.]
+      </p>
+      <p>
+        Example: "The final brand identity features a modern, approachable logo with warm
+        colors that evoke optimism and community. The typography system balances friendly
+        rounded sans-serif for headings with clean, readable body text. I created a
+        comprehensive brand guidelines document and social media template system for
+        consistent application."
+      </p>
+
+      <div class="image-showcase">
+        <!-- Add your final solution images here -->
+        <img src="https://via.placeholder.com/900x600/764ba2/ffffff?text=Final+Design+Solution"
+             alt="Final design solution">
+      </div>
+
+      <div class="image-grid">
+        <!-- Add additional final images here -->
+        <img src="https://via.placeholder.com/400x400/667eea/ffffff?text=Logo"
+             alt="Logo design">
+        <img src="https://via.placeholder.com/400x400/FF6B6B/ffffff?text=Color+Palette"
+             alt="Color palette">
+        <img src="https://via.placeholder.com/400x400/4A90E2/ffffff?text=Typography"
+             alt="Typography system">
+      </div>
+    </section>
+
+    <!-- The Impact -->
+    <section class="case-study-section">
+      <span class="section-label">The Results</span>
+      <h2>Impact & Outcomes</h2>
+      <p>
+        [This is THE MOST IMPORTANT section. Quantify your results. Even if you don't have
+        exact numbers, provide estimates or qualitative outcomes.]
+      </p>
+
+      <div class="impact-metrics">
+        <div class="metric">
+          <span class="metric-number">[Number]%</span>
+          <span class="metric-label">[Metric Name]</span>
+        </div>
+        <div class="metric">
+          <span class="metric-number">[Number]</span>
+          <span class="metric-label">[Metric Name]</span>
+        </div>
+        <div class="metric">
+          <span class="metric-number">[Number]x</span>
+          <span class="metric-label">[Metric Name]</span>
+        </div>
+      </div>
+
+      <p>
+        Example: "The rebrand was launched with a social media campaign that generated
+        3x normal engagement. Within 3 months of implementation, the organization saw
+        a 45% increase in social media followers and a 30% increase in online donations.
+        Donor surveys showed 85% positive sentiment about the new brand identity, with
+        many commenting that it felt 'more approachable' and 'modern.'"
+      </p>
+
+      <!-- Optional: Testimonial -->
+      <div class="testimonial-box">
+        <p>
+          "[Client quote about your work and its impact. Ask them to be specific about
+          results or what they appreciated about working with you.]"
+        </p>
+        <p class="testimonial-author">
+          — <strong>[Name]</strong>, [Title at Organization]
+        </p>
+      </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="case-study-section">
+      <span class="section-label">Reflection</span>
+      <h2>What I Learned</h2>
+      <p>
+        [Optional but valuable: What did this project teach you? What would you do
+        differently next time? This shows growth mindset and professional maturity.]
+      </p>
+      <p>
+        Example: "This project taught me the importance of user research in brand design.
+        My initial instinct was to go with a cooler color palette, but testing proved
+        that warmer tones resonated better with the target audience. I also learned to
+        create more comprehensive brand guidelines to ensure consistent implementation
+        across different team members."
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Next Steps CTA -->
+  <section class="next-project">
+    <div class="container">
+      <h3>Interested in working together?</h3>
+      <div class="cta-buttons">
+        <a href="../portfolio.html" class="cta-button secondary">
+          <i class="fas fa-th"></i>
+          View More Projects
+        </a>
+        <a href="../index.html#contact" class="cta-button">
+          <i class="fas fa-envelope"></i>
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Gary Fletcher. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
