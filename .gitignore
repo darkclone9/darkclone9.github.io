@@ -45,3 +45,6 @@ npm-debug.log*
 gary-portfolio-blog/
 mcp-server/
 ai-rules-config/
+
+# Claude Code configuration
+.claude/
