@@ -595,26 +595,9 @@
         const skillBadges = document.querySelectorAll('.skill-badge');
 
         skillBadges.forEach(badge => {
-            // Add hover effects
-            badge.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.05)';
-                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.3)';
-                this.style.borderColor = 'var(--primary-coral)';
-            });
-
-            badge.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-                this.style.borderColor = 'transparent';
-            });
-
             // Add click interaction with navigation preview
+            // Note: Hover effects are handled by CSS to avoid conflicts with entrance animation
             badge.addEventListener('click', function(e) {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'translateY(-3px) scale(1.05)';
-                }, 100);
-
                 showNavigationPreview(this);
             });
         });
